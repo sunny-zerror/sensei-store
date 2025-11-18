@@ -1,0 +1,50 @@
+@import "./fontSetting.css";
+
+@import "./pages/login.css";
+@import "./pages/products.css";
+@import "./pages/account.css";
+@import "./pages/checkout.css";
+@import "./pages/legals.css";
+@import "./pages/contact.css";
+
+
+@import "./components/home/heroSwiper.css";
+@import "./components/home/trendingProducts.css";
+@import "./components/home/aboutSection.css";
+@import "./components/home/booklet.css";
+@import "./components/home/productsSwiper.css";
+
+
+@import "./components/account/purchases.css";
+@import "./components/account/settings.css";
+@import "./components/account/accountLeftSlide.css";
+@import "./components/account/forms.css";
+
+
+@import "./components/products/productsSortDrop.css";
+@import "./components/products/filterDrop.css";
+@import "./components/products/productDetail.css";
+@import "./components/products/mobileImageSlider.css";
+@import "./components/products/desktopImageSlider.css";
+@import "./components/products/openProductDescription.css";
+
+
+@import "./components/common/footer.css";
+@import "./components/common/helpBtn.css";
+@import "./components/common/cartBag.css";
+@import "./components/common/navNotification.css";
+
+
+@import "./components/common/header/desktopHeader.css";
+@import "./components/common/header/navCategoryDrop.css";
+@import "./components/common/header/openSearch.css";
+@import "./components/common/header/mobileHeader.css";
+@import "./components/common/header/mobileNav.css";
+
+
+@import "./components/cards/productCard.css";
+
+
+@import "./components/effects/imagePops.css";
+
+

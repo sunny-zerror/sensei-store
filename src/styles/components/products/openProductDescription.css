@@ -1,0 +1,130 @@
+/* MOBILE DESC CONTAINER */
+.mobile_desc {
+  position: fixed;
+  top: 0;
+  /* display: none; */
+  right: -100vw; /* initially hidden, slide-in from right */
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background: #f6f6f6;
+  margin: 0;
+  overflow-y: scroll;
+}
+
+/* Inner padding wrapper */
+.mobile_desc_inner {
+  width: 100%;
+  padding: 1rem;
+  padding-top: 2rem;
+  box-sizing: border-box;
+}
+
+/* Header (reuses same styles as desktop) */
+.fixed_right_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Description (reuses desktop styles) */
+.fixed_right_desc {
+  margin-top: 2.5rem; /* mt-10 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* space-y-5 */
+}
+
+.fixed_right_desc_item {
+  color: #222;
+}
+
+/* Image section */
+.mobile_desc_img_wrap {
+  width: 100%;
+  height: 100vh;
+}
+
+.fixed_left_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* LEFT PANEL */
+.fixed_left {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: -50vw; /* initially hidden */
+  width: 50vw;
+  height: 100vh;
+  z-index: 9999;
+  background: #000; /* background class replacement */
+}
+
+.fixed_left_img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* RIGHT PANEL */
+.fixed_right {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  right: -50vw; /* initially hidden */
+  width: 50vw;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #f6f6f6;
+  padding: 6rem 6rem 2rem; /* px-24 pt-32 approximation */
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.fixed_right_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Description */
+.fixed_right_desc {
+  margin-top: 2.5rem; /* mt-10 */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem; /* space-y-5 */
+}
+
+.fixed_right_desc_item {
+  color: #222;
+}
+
+.product_page__expand_btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  background: white;
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product_page__expand_hover {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #31313114;
+  transition: left 0.3s ease;
+}
+
+.product_page__expand_btn:hover .product_page__expand_hover {
+  left: 0;
+}

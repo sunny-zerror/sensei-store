@@ -1,0 +1,255 @@
+.footer_container {
+  border-top: #31313196 solid 1px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: 2.5rem 1rem 4.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .footer_container {
+    gap: 5rem;
+    padding: 2.5rem 2.5rem 4.5rem;
+  }
+}
+
+.footer_grid {
+  display: grid;
+  grid-template-columns: 25% 25% 50%;
+  row-gap: 1.25rem;
+}
+
+@media (max-width: 1023px) {
+  .footer_grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}
+
+.footer_section_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .footer_section_header {
+    cursor: default;
+  }
+  .footer_arrow {
+    display: none;
+  }
+}
+
+.footer_section_title {
+  text-transform: uppercase;
+}
+
+.footer_arrow {
+  transition: transform 0.3s ease;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+/* Group container (acts like Tailwind "group") */
+.footer_links_group {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  /* gap: 0.25rem; */
+}
+
+/* Parent hover (group-hover equivalent) */
+.footer_links_group:hover .footer_link_item {
+  filter: blur(0.7px);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+/* Individual link styling */
+.footer_link_item {
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Individual hover (override parent hover effects) */
+.footer_link_item:hover {
+  text-decoration: underline;
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+.footer_links {
+  margin-top: 0.75rem;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: height 0.3s ease;
+  height: 0;
+}
+
+.footer_links.open {
+  height: 8rem;
+}
+
+@media (min-width: 1024px) {
+  .footer_links {
+    height: auto;
+  }
+}
+
+.footer_links_inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: fit-content;
+}
+
+.footer_link_item {
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer_link_item:hover {
+  text-decoration: underline;
+  filter: blur(0);
+  opacity: 1;
+}
+
+.footer_email_parent {
+  width: 100%;
+}
+.footer_email_parent_inner {
+  width: 100%;
+}
+
+.footer_newsletter_form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .footer_email_parent {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer_email_parent_inner {
+    width: 60%;
+  }
+  .footer_newsletter_form {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.footer_input {
+  height: 2.5rem;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.25rem;
+  padding-left: 0.5rem;
+  outline: none;
+}
+
+.footer_button {
+  height: 2.5rem;
+  width: 100%;
+  background-color: #313131;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.footer_button:hover {
+  opacity: 0.85;
+}
+
+@media (min-width: 1024px) {
+  .footer_button {
+    padding-inline: 1.5rem;
+    width: fit-content;
+  }
+  .footer_button p {
+    transform: translateY(1.5px);
+  }
+}
+
+.footer_store_name {
+  text-transform: uppercase;
+}
+
+.footer_bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 2.5rem;
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .footer_bottom {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}
+
+.footer_credit {
+  text-transform: capitalize;
+  margin-top: 0.5rem;
+}
+/* Footer.module.css (add/replace these rules) */
+
+.footer_socials {
+  display: flex;
+  gap: 1.25rem;
+  /* this makes parent act like the tailwind "group" */
+}
+
+/* Parent hover -> blur and fade icons (group-hover equivalent) */
+.footer_socials:hover .footer_social_icon {
+  filter: blur(0.5px);
+  opacity: 0.6;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Default icon styling */
+.footer_social_icon {
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: filter 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  /* ensure blur is off by default */
+  filter: none;
+  opacity: 1;
+}
+
+/* Per-icon hover should override the parent hover (matching your original !blur-0 and !opacity-100) */
+.footer_social_icon:hover {
+  filter: none !important;
+  opacity: 1 !important;
+  transform: scale(1.25);
+}
+
+/* Responsive: on large screens icons are not scaled initially (matches your lg:scale-100) */
+@media (min-width: 1024px) {
+  .footer_social_icon {
+    transform: scale(1); /* lg:scale-100 */
+  }
+
+  .footer_social_icon:hover {
+    transform: scale(1.1);
+  }
+}

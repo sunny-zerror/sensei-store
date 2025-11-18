@@ -1,0 +1,136 @@
+.home_aboutSection_hero {
+  padding: 0 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 70vh;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .home_aboutSection_hero {
+    padding: 0;
+    height: 100vh;
+  }
+}
+
+.home_aboutSection_title {
+  width: 50%;
+}
+
+@media (max-width: 768px) {
+  .home_aboutSection_title {
+    width: 100%;
+    font-size: 2rem;
+    line-height: 2rem;
+  }
+  .home_aboutSection_description{
+    font-size: 1rem;
+    line-height: 1.25rem;
+  }
+}
+
+.home_aboutSection_description {
+  opacity: 0.6;
+  margin-top: 2.5rem;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .home_aboutSection_description {
+    width: 50%;
+  }
+}
+
+.home_aboutSection_buttonsWrapper {
+  width: 100%;
+  margin-top: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home_aboutSection_buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Button */
+.home_aboutSection_button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  position: relative;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  z-index: 95;
+}
+
+/* Avatar */
+.home_aboutSection_buttonAvatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.home_aboutSection_buttonAvatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Label wrapper */
+.home_aboutSection_buttonLabelWrapper {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: fit-content;
+}
+
+/* Label */
+.home_aboutSection_buttonLabel {
+  transition: transform 0.3s ease;
+  width: fit-content;
+}
+
+.home_aboutSection_buttonLabelClone {
+  position: absolute;
+  color: black;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+/* Underline */
+.home_aboutSection_buttonUnderline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 9999px;
+  z-index: 9;
+  transition: width 0.3s ease;
+}
+
+/* Hover effects */
+.home_aboutSection_button:hover .home_aboutSection_buttonLabel {
+  transform: translateY(-100%);
+}
+
+.home_aboutSection_button:hover .home_aboutSection_buttonLabelClone {
+  transform: translateY(-100%);
+}
+
+.home_aboutSection_button:hover .home_aboutSection_buttonUnderline {
+  width: 100%;
+}

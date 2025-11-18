@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Blue Blend Effect</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: #000;
+        overflow: hidden;
+        cursor: none;
+        color: #fff;
+        font-family: system-ui;
+      }
+      #container {
+        position: fixed;
+        inset: 0;
+      }
+      .custom-cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+        mix-blend-mode: difference;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <div class="custom-cursor"></div>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js"
+        }
+      }
+    </script>
+
+    <script type="module">
+      import * as THREE from "three";
+
+      class BlueAuraEffect {
+        constructor() {
+          this.container = document.getElementById("container");
+          this.cursor = document.querySelector(".custom-cursor");
+
+          this.mouse = new THREE.Vector2(0.5, 0.5);
+          this.targetMouse = new THREE.Vector2(0.5, 0.5);
+
+          this.time = 0;
+          this.fadeStrength = 0; // fades out after 4 seconds
+          this.lastMoveTime = performance.now();
+
+          this.init();
+          this.events();
+          this.animate();
+        }
+
+        init() {
+          this.scene = new THREE.Scene();
+          this.camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+
+          this.renderer = new THREE.WebGLRenderer({ antialias: false });
+          this.renderer.setSize(window.innerWidth, window.innerHeight);
+          this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+          this.container.appendChild(this.renderer.domElement);
+
+          this.material = new THREE.ShaderMaterial({
+            uniforms: {
+              uTime: { value: 0 },
+              uMouse: { value: new THREE.Vector2(0.5, 0.5) },
+              uFade: { value: 0 },
+              uResolution: {
+                value: new THREE.Vector2(window.innerWidth, window.innerHeight),
+              },
+            },
+            vertexShader: `
+            varying vec2 vUv;
+            void main() {
+              vUv = uv;
+              gl_Position = vec4(position, 1.0);
+            }
+          `,
+            fragmentShader: `
+            uniform float uTime;
+            uniform vec2 uMouse;
+            uniform float uFade;
+            uniform vec2 uResolution;
+
+            varying vec2 vUv;
+
+            float rand(vec2 c){
+              return fract(sin(dot(c, vec2(12.9898,78.233))) * 43758.5453);
+            }
+
+            void main() {
+              vec2 uv = vUv;
+
+              // pure black background
+              vec3 color = vec3(0.0);
+
+              // distance from mouse in UV
+              float dist = distance(uv, uMouse);
+
+              // 20% radius circle
+              float radius = 0.20;
+
+              // softness
+              float circle = smoothstep(radius, radius - 0.1, dist);
+
+              // inverse circle → 1 inside the radius
+              float inside = 1.0 - circle;
+
+              // fade over 4 seconds
+              inside *= uFade;
+
+              // Star noise
+              float star = step(0.996, rand(uv * uTime * 20.0)); // occasional star
+              
+              // stars only inside radius
+              vec3 starColor = vec3(0.3, 0.5, 1.0) * star * inside;
+
+              // blue blending aura
+              vec3 aura = mix(vec3(0.0), vec3(0.2, 0.4, 1.0), inside);
+
+              color += aura + starColor;
+
+              gl_FragColor = vec4(color, 1.0);
+            }
+          `,
+          });
+
+          const mesh = new THREE.Mesh(
+            new THREE.PlaneGeometry(2, 2),
+            this.material
+          );
+          this.scene.add(mesh);
+        }
+
+        events() {
+          window.addEventListener("mousemove", (e) => {
+            this.targetMouse.x = e.clientX / window.innerWidth;
+            this.targetMouse.y = 1 - e.clientY / window.innerHeight;
+
+            this.cursor.style.left = `${e.clientX}px`;
+            this.cursor.style.top = `${e.clientY}px`;
+
+            this.lastMoveTime = performance.now();
+            this.fadeStrength = 1; // show effect immediately
+          });
+
+          window.addEventListener("resize", () => {
+            this.renderer.setSize(innerWidth, innerHeight);
+            this.material.uniforms.uResolution.value.set(
+              innerWidth,
+              innerHeight
+            );
+          });
+        }
+
+        animate() {
+          requestAnimationFrame(() => this.animate());
+          this.time += 0.016;
+
+          // Smooth movement
+          this.mouse.lerp(this.targetMouse, 0.1);
+
+          this.material.uniforms.uTime.value = this.time;
+          this.material.uniforms.uMouse.value.copy(this.mouse);
+
+          // 4-second fade logic
+          let idleTime = (performance.now() - this.lastMoveTime) / 1000;
+          if (idleTime >= 4) {
+            this.fadeStrength -= 0.02;
+            this.fadeStrength = Math.max(0, this.fadeStrength);
+          }
+
+          this.material.uniforms.uFade.value = this.fadeStrength;
+
+          this.renderer.render(this.scene, this.camera);
+        }
+      }
+
+      new BlueAuraEffect();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+/* Wrapper */
+.booklet_wrapper {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.booklet_sticky_section_parent {
+  height: 90%;
+  position: absolute;
+  width: 100%;
+}
+
+/* Sticky section with text, gif and buttons */
+.booklet_sticky_section {
+  z-index: 2;
+  pointer-events: none;
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0rem 1rem;
+  position: absolute;
+  top: 0;
+}
+
+@media (min-width: 1024px) {
+  .booklet_sticky_section {
+    flex-direction: row;
+    position: sticky;
+    top: 50svh;
+    height: fit-content;
+    padding: 0 2rem;
+  }
+}
+
+/* Columns */
+.booklet_col {
+  color: white;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .booklet_col {
+    width: 30%;
+  }
+}
+
+.booklet_gift_img {
+  width: 30%;
+}
+
+@media (min-width: 768px) {
+  .booklet_gift_img {
+    width: 20%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .booklet_gift_img {
+    width: 30%;
+  }
+
+  .booklet_col_center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .booklet_col_end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+/* Buttons */
+.booklet_btn_group {
+  display: flex;
+  gap: 0.25rem;
+  pointer-events: auto;
+  align-items: center;
+}
+
+.booklet_square_btn {
+  aspect-ratio: 1/1;
+  height: 2rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+/* See more button */
+.booklet_text_btn {
+  height: 2rem;
+  text-transform: capitalize;
+  padding: 0rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+/* Background image section */
+.booklet_cards_hov_sec {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .booklet_cards_hov_sec {
+    height: 100vw;
+  }
+}
+
+.booklet_parallax_img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hotspot wrapper */
+.booklet_hotspot {
+  position: absolute;
+  display: none;
+  width: 18vw;
+  aspect-ratio: 8/7;
+  gap: 0.75rem;
+  align-items: center;
+  z-index: 9;
+}
+
+@media (min-width: 1024px) {
+  .booklet_hotspot {
+    display: flex;
+  }
+}
+
+/* Product card */
+.booklet_product_card {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background: #f6f6f6;
+}
+
+.booklet_product_img {
+  width: 100%;
+  height: 65%;
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.booklet_product_img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.booklet_product_info {
+  width: 100%;
+  height: 35%;
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.booklet_product_info_header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.booklet_product_name {
+  text-transform: uppercase;
+}
+
+.booklet_product_icon {
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.booklet_product_price {
+  opacity: 0.6;
+}
+
+/* Pulse Button */
+.booklet_pulseCircle {
+  position: relative;
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  flex-shrink: 0;
+  z-index: 9;
+  color: black;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.booklet_pulseCircle p {
+  transform: translateY(-1px);
+}
+
+.booklet_pulseCircle::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid white;
+  border-radius: 50%;
+  transition: all 1s linear;
+  transform: scale(1);
+  animation: booklet_pulseScale 2s infinite ease-out;
+}
+
+@keyframes booklet_pulseScale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.8);
+  }
+}
+
+.booklet_pulseCircle:hover::after {
+  animation: none;
+  transform: scale(1.5);
+}

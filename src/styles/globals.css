@@ -1,0 +1,39 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+.scroller_none::-webkit-scrollbar {
+  display: none;
+}
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  box-sizing: border-box;
+}
+button {
+  background-color: transparent;
+  border: transparent;
+}
+.glass {
+  background: #ffffff43;
+  border: 1px solid #ffffff14;
+  backdrop-filter: blur(6px);
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+[data-lenis-prevent] {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.background {
+  background-color: #f6f6f6;
+}
+.underline:hover{
+  text-decoration: underline;
+}
+.uppercase{
+  text-transform: uppercase;
+}

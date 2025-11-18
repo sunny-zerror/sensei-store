@@ -1,0 +1,152 @@
+/* Menu */
+.mobileNav_openMenuParent {
+  opacity: 1;
+  width: 100%;
+  height: 0;
+  background-color: #ffffffd5;
+  backdrop-filter: blur(.25rem);
+  position: absolute;
+  overflow: hidden;
+  top: -0.25rem;
+  left: 0;
+  z-index: 9999;
+  margin-top: .5rem;
+  border-radius: 0.75rem;
+}
+
+.mobileNav_menuHeader {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  background-color: #F3F3F4;
+  border-radius: 0.75rem;
+}
+
+.mobileNav_menuHeaderClose {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.mobileNav_closeIcon {
+  background-color: #ffffff;
+  padding: 0.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+}
+
+.mobileNav_menuBackdrop {
+  width: 100%;
+  height: 63vh;
+  padding-bottom: 2rem;
+  overflow-y: scroll;
+}
+
+/* Scroll inside menu */
+.mobileNav_menuScroll {
+  width: 100%;
+  padding: 1rem;
+}
+
+.mobileNav_category {
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.mobileNav_categoryTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mobileNav_arrow {
+  transition: transform 0.5s;
+}
+
+.mobileNav_arrowOpen {
+  transform: rotate(180deg);
+}
+
+.mobileNav_categoryContent {
+  transition: all 0.5s;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.mobileNav_categoryOpen {
+  max-height: 25rem;
+  opacity: 1;
+}
+
+.mobileNav_subSection {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}
+
+.mobileNav_subTitle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.mobileNav_subItems {
+  transition: all 0.5s;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+}
+
+.mobileNav_subOpen {
+  max-height: 20rem;
+  opacity: 1;
+}
+
+.mobileNav_itemsList {
+  margin-top: 0.25rem;
+  padding-left: 1rem;
+}
+
+.mobileNav_itemRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.mobileNav_itemLink {
+  color: #4b5563;
+  text-decoration: none;
+}
+
+.mobileNav_itemLink:hover {
+  color: black;
+}
+
+/* More Section */
+.mobileNav_moreSection {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-top: 1.25rem;
+}
+
+.mobileNav_moreLabel {
+  opacity: 0.6;
+}
+
+.mobileNav_moreItem {
+  margin-top: 1.5rem;
+}

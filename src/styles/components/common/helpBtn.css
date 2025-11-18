@@ -1,0 +1,95 @@
+.helpbtn_short_links {
+  position: fixed;
+  bottom: 1.8rem;
+  left: 10px;
+  z-index: 96;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  width: fit-content;
+  height: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .helpbtn_short_links {
+    left: 2rem;
+  }
+}
+
+.helpbtn_short_links__panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.3rem;
+  transform: translateY(-7.15rem);
+}
+
+.helpbtn_short_links__button {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  padding: 0rem 0.25rem;
+  height: 1.5rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  cursor: pointer;
+}
+
+.helpbtn_short_links__button_content {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.helpbtn_short_links__icon {
+  display: flex;
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+}
+.helpbtn_short_links__icon_plus_img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+
+.helpbtn_short_links__label {
+  white-space: nowrap;
+  text-transform: capitalize;
+}
+.helpbtn_short_links__label:hover {
+  text-decoration: underline;
+}
+
+.helpbtn_short_links__toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0rem 0.25rem;
+  border-radius: 0.5rem;
+  border-color: transparent;
+  z-index: 50;
+  height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.helpbtn_short_links__icon_toggle {
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.helpbtn_rotate45 {
+  transform: rotate(45deg);
+}
+
+.helpbtn_rotateReset {
+  transform: rotate(0deg);
+}
+
+.helpbtn_short_links__toggle_label {
+  cursor: pointer;
+  white-space: nowrap;
+  color: #222;
+}
