@@ -42,6 +42,17 @@ const AccountLeftSlide = () => {
                             </p>
                         </Link>
                     </div>
+                    <div>
+                        <Link href={"/account/wishlist"}>
+                            <p
+                                className={`accountLeftSlide_navLink text-2xl ${
+                                    router.pathname === "/account/wishlist" ? "active" : ""
+                                }`}
+                            >
+                                Wishlist
+                            </p>
+                        </Link>
+                    </div>
 
                     <div>
                         <Link href={"/account/purchases"}>

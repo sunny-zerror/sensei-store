@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { RiBookmarkFill, RiBookmarkLine } from "@remixicon/react";
+import { usePathname } from "next/navigation";
 
 const ProductCard = ({ product, gridCol }) => {
+  const pathname = usePathname()
   const images = product?.images || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImage, setCurrentImage] = useState(images[0]);
@@ -94,16 +96,33 @@ const ProductCard = ({ product, gridCol }) => {
 
         <img className="productCard_image" src={currentImage} alt="Product" />
       </div>
-      {gridCol !== 8 && (
-        <div className={` ${gridCol === 2 ? "productCard_details_grid2" : "productCard_details"}  `}>
-          <h3 className={` ${gridCol === 2 ? "productCard_nameContainer_grid2" : "productCard_nameContainer"} text-base  `}>{product?.name}</h3>
-          <div className={` ${gridCol === 2 ? "productCard_priceContainer_grid2" : "productCard_priceContainer"}  `}>
-            <h3 className="productCard_priceOld text-xs">Rs. {(product?.price) + 200}</h3>
-            <h3 className="productCard_priceCurrent text-sm">
-              Rs. {product?.price}
-            </h3>
+      {pathname === "/account/wishlist" ? (
+        <>
+          <div>
+            <h3 className={`  text-base  `}>{product?.name}</h3>
+            <div className="productCard_priceContainer_grid2">
+              <h3 className="productCard_priceOld text-xs">Rs. {(product?.price) + 200}</h3>
+              <h3 className="productCard_priceCurrent text-sm">
+                Rs. {product?.price}
+              </h3>
+            </div>
           </div>
-        </div>
+        </>
+      ) : (
+        <>
+          {gridCol !== 8 && (
+            <div className={` ${gridCol === 2 ? "productCard_details_grid2" : "productCard_details"}  `}>
+              <h3 className={` ${gridCol === 2 ? "productCard_nameContainer_grid2" : "productCard_nameContainer"} text-base  `}>{product?.name}</h3>
+              <div className={` ${gridCol === 2 ? "productCard_priceContainer_grid2" : "productCard_priceContainer"}  `}>
+                <h3 className="productCard_priceOld text-xs">Rs. {(product?.price) + 200}</h3>
+                <h3 className="productCard_priceCurrent text-sm">
+                  Rs. {product?.price}
+                </h3>
+              </div>
+            </div>
+          )}
+        </>
+
       )}
     </div>
   );

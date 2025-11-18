@@ -53,10 +53,10 @@ const DesktopHeader = () => {
         ref={headerOverlayRef}
         className="header_overlay scroller_none"
       />
-  <div className="desktop_open_cart_paren">
-      <CartBag openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={headerOverlayRef} />
+      <div className="desktop_open_cart_paren">
+        <CartBag openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={headerOverlayRef} />
 
-  </div>
+      </div>
 
       <div className="header_logo">
         <Link href="/">
@@ -94,7 +94,7 @@ const DesktopHeader = () => {
           <div className="desktop_header_right">
 
             <div
-              onClick={() => (setSearchActive(true) , setOpenCartBag(false) , setNavHover(false))}
+              onClick={() => (setSearchActive(true), setOpenCartBag(false), setNavHover(false))}
               onMouseEnter={() => {
                 if (searchActive || expandSearch) return;
                 setExpandSearch(true);
@@ -145,9 +145,11 @@ const DesktopHeader = () => {
                   <RiUserLine size={16} />
                 </div>
               </Link>
-              <div className="desktop_header_left_btn glass ">
-                <RiBookmarkLine size={16} />
-              </div>
+              <Link href="/account/wishlist">
+                <div className="desktop_header_left_btn glass ">
+                  <RiBookmarkLine size={16} />
+                </div>
+              </Link>
               {openCartBag ? (
                 <div
                   onClick={() => { setOpenCartBag(false) }}

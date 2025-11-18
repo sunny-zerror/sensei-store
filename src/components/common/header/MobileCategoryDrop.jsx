@@ -133,9 +133,18 @@ const MobileCategoryDrop = () => {
                     </div>
 
                     <div className="mobileNav_moreSection">
-                        <h3 className="mobileNav_moreItem text-2xl ">My Account</h3>
-                        <h3 className="mobileNav_moreItem text-2xl ">My Orders</h3>
-                        <h3 className="mobileNav_moreItem text-2xl ">My Wishlist</h3>
+                        <Link onClick={closeMenu} href="/login">
+                            <h3 className="mobileNav_moreItem text-2xl ">Login / Signup</h3>
+                        </Link>
+                        <Link onClick={closeMenu} href="/account">
+                            <h3 className="mobileNav_moreItem text-2xl ">My Account</h3>
+                        </Link>
+                        <Link onClick={closeMenu} href="/account/purchases">
+                            <h3 className="mobileNav_moreItem text-2xl ">My Orders</h3>
+                        </Link>
+                        <Link onClick={closeMenu} href="/account/wishlist">
+                            <h3 className="mobileNav_moreItem text-2xl ">My Wishlist</h3>
+                        </Link>
                     </div>
                 </div>
             </div>

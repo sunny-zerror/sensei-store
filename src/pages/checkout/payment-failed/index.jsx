@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const PaymentFailed = () => {
@@ -17,7 +18,7 @@ const PaymentFailed = () => {
           Unfortunately, your payment could not be processed. Please try again
           to complete your order.
         </p>
-        <a href="/">Go Back to home page</a>
+        <Link href="/">Go Back to home page</Link>
       </div>
     </>
   );

@@ -14,6 +14,7 @@ import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 const HeroSwiper = () => {
+  const [cachedVideos, setCachedVideos] = useState([]);
   const [activeIndex, setActiveIndex] = useState(0);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const bgVideoRef = useRef(null);
@@ -70,26 +71,38 @@ const HeroSwiper = () => {
     updateBullets();
   }, [activeIndex]);
 
+  useEffect(() => {
+    const loadVideos = async () => {
+      const loaded = await Promise.all(
+        HeroSwiperData.map(async (item) => {
+          const response = await fetch(item.url, { cache: "force-cache" });
+          const blob = await response.blob();
+          return URL.createObjectURL(blob);
+        })
+      );
+      setCachedVideos(loaded);
+    };
+
+    loadVideos();
+  }, []);
+
   return (
     <div ref={heroRef} className="hero_swiper">
       <video
         ref={bgVideoRef}
         className="hero_swiper__bg_video"
-        preload="auto"
-        loop
         autoPlay
+        loop
         muted
         playsInline
-        src={HeroSwiperData[activeIndex].url}
-      ></video>
-
+        src={cachedVideos[activeIndex]}
+      />
       <Swiper
         ref={swiperRef}
         modules={[Navigation, A11y, Autoplay, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
         speed={500}
-        loop
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,
@@ -113,14 +126,12 @@ const HeroSwiper = () => {
                 <video
                   ref={(el) => (slideVideoRefs.current[index] = el)}
                   className="hero_swiper__slide_video"
-                  preload="auto"
-                  loop
                   autoPlay
                   muted
+                  loop
                   playsInline
-                  src={data.url}
-                ></video>
-
+                  src={cachedVideos[index]}
+                />
                 <div className="hero_swiper__content">
                   <h3 className=" hero_swiper__tagline text-2xl">New Collection</h3>
                   <button className="hero_swiper__cta glass">

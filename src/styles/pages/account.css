@@ -48,8 +48,25 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2.5rem 1.25rem; /* gap-y-10 gap-x-5 */
 }
+.wishlist_box{
+  margin-top: 2rem;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: grid;
+  gap: 1.5rem .75rem; /* gap-y-10 gap-x-5 */
+}
+.wishlist_card{
+  width: 100%;
+}
 
 @media (min-width: 1024px) {
+  .wishlist_box{
+  margin-top: 2rem;
+  width: 50rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid;
+  gap: 2rem .75rem; /* gap-y-10 gap-x-5 */
+}
   .account_gridBox {
     grid-template-columns: 15rem 15rem;
   }

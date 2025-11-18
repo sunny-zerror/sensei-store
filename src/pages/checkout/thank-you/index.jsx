@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const ThankYou = () => {
@@ -20,7 +21,7 @@ const ThankYou = () => {
           You will be redirected to the home page in
           seconds
         </p>
-        <a href="/">Go Back to home page</a>
+        <Link href="/">Go Back to home page</Link>
       </div>
     </>
   );

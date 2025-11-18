@@ -120,13 +120,13 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                         <h3>Total</h3>
                         <h3>₹ 1,797</h3>
                     </div>
+                    <Link href="/checkout">
                     <div
                         onClick={() => { setOpenCartBag(false) }}
                         className="cartBag_checkoutButton">
-                        <Link href="/checkout">
                             <p className='text-base uppercase'>Checkout</p>
-                        </Link>
                     </div>
+                        </Link>
                     <div className="cartBag_continueShopping">
                         <p className="cartBag_continueText text-sm underline">Continue Shopping</p>
                     </div>

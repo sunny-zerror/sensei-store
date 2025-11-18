@@ -6,6 +6,7 @@ import {
   RiWhatsappLine,
   RiYoutubeLine
 } from "@remixicon/react";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Footer = () => {
@@ -48,9 +49,9 @@ const footerLinks = {
     >
       <div className="footer_links_group">
         {footerLinks[section].map((link, idx) => (
-          <a href={link.href} key={idx} className="footer_link_item">
+          <Link href={link.href} key={idx} className="footer_link_item">
             {link.title}
-          </a>
+          </Link>
         ))}
       </div>
     </div>
