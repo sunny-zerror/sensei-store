@@ -9,8 +9,8 @@
   .checkout_section {
     padding-top: 8rem;
     padding-bottom: 8rem;
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
   }
 }
 
@@ -51,9 +51,96 @@
   gap: 1rem;
   margin-bottom: 2rem;
 }
+.check_box_div {
+  cursor: pointer;
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid gray;
+}
+.check_box_div_active {
+  cursor: pointer;
+  height: 1rem;
+  color: white;
+  width: 1rem;
+  background-color: black;
+}
+.cards_inner_content {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.checkout_address_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.checkout_inp_flex {
+  display: flex;
+  gap: 1rem;
+}
+
 .checkout_thin_line {
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Base select */
+.checkOut_input {
+  font-size: 1rem;
+  width: 100%;
+  padding-left: 0.5rem;
+  height: 3rem;
+  padding-right: 3rem;
+  border: 1px solid #00000050;
+  outline: none;
+  color: #000; /* normal text */
+}
+@media (min-height: 1020px) {
+  .checkOut_input {
+    padding-left: 1rem;
+  }
+}
+
+.delivery__input__phone {
+  height: 3rem !important;
+  font-family: suisse !important;
+  position: relative;
+  /* padding: 1rem !important; */
+  border: 1px solid #dedede !important;
+  /* border: none !important; */
+  font-size: 0.9rem !important;
+  background-color: rgb(245 243 243 / 60%) !important;
+  width: 100% !important;
+}
+.react-international-phone-input-container
+  .react-international-phone-input.delivery__input__phone {
+  border: 1px solid #dedede !important;
+  border: none !important;
+}
+.delivery__phone_btn .react-international-phone-country-selector-button {
+  /* border: 1px solid #dedede !important; */
+  scale: 0.8;
+  border: none !important;
+  background-color: rgba(255, 255, 255, 0.6) !important;
+  height: 90%;
+}
+/* 50% opacity placeholder */
+.placeholderOption {
+  color: #00000060;
+}
+
+/* Fix: when placeholder is selected, show light color */
+.checkOut_input:invalid {
+  color: #00000060;
+}
+
+.checkOut_input::placeholder {
+  color: #00000060;
+}
+
+.checkOut_input:focus {
+  border: 1px solid rgb(0, 0, 0);
 }
 
 .checkout_user_detailsHeader {
@@ -70,7 +157,7 @@
 
 @media (min-width: 1024px) {
   .checkout_leftContainer {
-    width: 70%;
+    width: 60%;
   }
 }
 
@@ -162,7 +249,7 @@
 
 @media (min-width: 1024px) {
   .checkout_summaryContainer {
-    width: 30%;
+    width: 33%;
   }
 }
 
@@ -188,6 +275,32 @@
   }
 }
 
+.coupon_div {
+  display: flex;
+  gap: 0.5rem;
+}
+.checkout_couponInput{
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+
+}
+.checkout_couponBtn {
+  height: 2.5rem;
+  padding-inline: 2rem;
+  background-color: #313131;
+  color: white;
+  text-transform: uppercase;
+  border-radius: 0.25rem;
+  border: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.checkout_couponBtn:hover {
+  opacity: 0.85;
+}
 .checkout_row {
   display: flex;
   width: 100%;
@@ -238,9 +351,7 @@
   color: #fff;
 }
 
-
-
-.status_section{
+.status_section {
   height: 100vh;
   flex-direction: column;
   width: 100%;
@@ -250,14 +361,14 @@
   align-items: center;
   justify-content: center;
 }
-.status_section img{
+.status_section img {
   width: 6rem;
 }
-.status_section p{
+.status_section p {
   width: 30%;
   text-align: center;
 }
 
-.status_section a:hover{
+.status_section a:hover {
   text-decoration: underline;
 }

@@ -1,9 +1,13 @@
-import { RiDeleteBinLine } from "@remixicon/react";
+import { countriesData } from "@/components/helpers/CountriesData";
+import { RiCheckLine, RiDeleteBinLine } from "@remixicon/react";
 import Link from "next/link";
 import React, { useState } from "react";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 const Checkout = () => {
     const [quantity, setQuantity] = useState(1);
+    const [sameShippingBillingBtn, setSameShippingBillingBtn] = useState(false)
 
     const increment = () => setQuantity((prev) => prev + 1);
     const decrement = () =>
@@ -37,32 +41,159 @@ const Checkout = () => {
 
                         <div className="checkout_user_details">
                             <div className="checkout_user_detailsHeader">
-                                <h3 className="checkout_subHeading text-xl uppercase">Your Details</h3>
-                                <Link href="/account/settings">
-                                <div className="settings__link">
-                                    <p>Edit details</p>
-                                </div>
+                                <h3 className="checkout_subHeading text-xl uppercase">Email</h3>
+                                <Link href="/login">
+                                    <div className="settings__link">
+                                        <p>login</p>
+                                    </div>
                                 </Link>
                             </div>
-                            <div className=" text-base">
+                            <input type="email" placeholder="" className="checkOut_input" defaultValue={user.email} name="" id="" />
+
+                            {/* <div className=" text-base">
                                 <p>{user.email}</p>
                                 <p>{user.phone}</p>
                                 <p>{user.name}</p>
                                 <p>{user.dob}</p>
-                            </div>
+                            </div> */}
 
-                            <div className="checkout_thin_line"></div>
+                            {/* <div className="checkout_thin_line"></div> */}
                         </div>
 
                         <div className="checkout_user_details">
                             <h3 className="checkout_subHeading text-xl uppercase">Shipping Address</h3>
-                            <div className=" text-base">
+                            <div className="checkout_address_form">
+                                <div className="checkout_inp_flex">
+                                    <input type="text" placeholder="First Name" className="checkOut_input" name="" id="" />
+                                    <input type="text" placeholder="Last Name" className="checkOut_input" name="" id="" />
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <div className="checkOut_input">
+                                        <PhoneInput
+                                            defaultCountry="in"
+                                            className="delivery__phone_btn"
+                                            inputClassName="delivery__input__phone"
+                                        />
+                                        <input
+                                            type="hidden"
+                                        />
+                                        <input type="hidden" />
+
+                                    </div>
+                                    <select className="checkOut_input" required defaultValue="">
+                                        <option value="" disabled hidden className="placeholderOption">
+                                            Address Type
+                                        </option>
+
+                                        {["Home", "Office", "Other"].map((item, index) => (
+                                            <option value={item} key={`address-${index}`}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                    </select>
+
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <input type="text" placeholder="City" className="checkOut_input" name="" id="" />
+                                    <input type="text" placeholder="ZIP Code" className="checkOut_input" name="" id="" />
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <select className="checkOut_input" required defaultValue="">
+                                        <option value="" disabled hidden className="placeholderOption">
+                                            Country/Region
+                                        </option>
+                                        {countriesData?.map((item, index) => (
+                                            <option value={item?.name || ""} key={`country-${index}`}>
+                                                {item?.name || ""}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <input type="text" placeholder="State" className="checkOut_input" name="" id="" />
+                                </div>
+                                <input type="text" placeholder="Address Line" className="checkOut_input" name="" id="" />
+                                <input type="text" placeholder="Apartment, Suite, etc" className="checkOut_input" name="" id="" />
+
+
+                            </div>
+                            {/* <div className=" text-base">
                                 <p>{user.address.line1}</p>
                                 <p>{user.address.line2}</p>
                                 <p>{user.address.country}</p>
+                            </div> */}
+
+                            {/* <div className="checkout_thin_line"></div> */}
+                        </div>
+
+                        <div className="checkout_user_details">
+                            <h3 className="checkout_subHeading text-xl uppercase">Billing Address</h3>
+
+                            <div className="cards_inner_content">
+                                <div onClick={() => setSameShippingBillingBtn(!sameShippingBillingBtn)} className={`check_box_div center ${sameShippingBillingBtn ? "check_box_div_active" : ""} `}>
+                                    {sameShippingBillingBtn && <RiCheckLine size={14} />}
+                                </div>
+                                <p>Use shipping address as billing address</p>
                             </div>
 
-                            <div className="checkout_thin_line"></div>
+                            <div className="checkout_address_form">
+                                <div className="checkout_inp_flex">
+                                    <input type="text" placeholder="First Name" className="checkOut_input" name="" id="" />
+                                    <input type="text" placeholder="Last Name" className="checkOut_input" name="" id="" />
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <div className="checkOut_input">
+                                        <PhoneInput
+                                            defaultCountry="in"
+                                            className="delivery__phone_btn"
+                                            inputClassName="delivery__input__phone"
+                                        />
+                                        <input
+                                            type="hidden"
+                                        />
+                                        <input type="hidden" />
+
+                                    </div>
+                                    <select className="checkOut_input" required defaultValue="">
+                                        <option value="" disabled hidden className="placeholderOption">
+                                            Address Type
+                                        </option>
+
+                                        {["Home", "Office", "Other"].map((item, index) => (
+                                            <option value={item} key={`address-${index}`}>
+                                                {item}
+                                            </option>
+                                        ))}
+                                    </select>
+
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <input type="text" placeholder="City" className="checkOut_input" name="" id="" />
+                                    <input type="text" placeholder="ZIP Code" className="checkOut_input" name="" id="" />
+                                </div>
+                                <div className="checkout_inp_flex">
+                                    <select className="checkOut_input" required defaultValue="">
+                                        <option value="" disabled hidden className="placeholderOption">
+                                            Country/Region
+                                        </option>
+                                        {countriesData?.map((item, index) => (
+                                            <option value={item?.name || ""} key={`country-${index}`}>
+                                                {item?.name || ""}
+                                            </option>
+                                        ))}
+                                    </select>
+                                    <input type="text" placeholder="State" className="checkOut_input" name="" id="" />
+                                </div>
+                                <input type="text" placeholder="Address Line" className="checkOut_input" name="" id="" />
+                                <input type="text" placeholder="Apartment, Suite, etc" className="checkOut_input" name="" id="" />
+
+
+                            </div>
+                            {/* <div className=" text-base">
+                                <p>{user.address.line1}</p>
+                                <p>{user.address.line2}</p>
+                                <p>{user.address.country}</p>
+                            </div> */}
+
+                            {/* <div className="checkout_thin_line"></div> */}
                         </div>
 
                         <div className="">
@@ -109,9 +240,12 @@ const Checkout = () => {
                         </div>
                     </div>
 
-                    {/* Summary Box */}
                     <div className="checkout_summaryContainer">
                         <div className="checkout_summaryWrapper">
+                            <div className="coupon_div">
+                                <input type="text" placeholder="Coupon Code" className="checkout_couponInput" />
+                                <button className="checkout_couponBtn text-base uppercase">Apply</button>
+                            </div>
 
                             <div className="checkout_row text-xl">
                                 <p className="checkout_textBase">Total Charge</p>
