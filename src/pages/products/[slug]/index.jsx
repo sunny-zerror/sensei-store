@@ -7,6 +7,8 @@ import MobileImageSlider from "@/components/products/MobileImageSlider";
 import DesktopImageSlider from "@/components/products/DesktopImageSlider";
 import Marquee from "react-fast-marquee";
 import useOpenDescription from "@/store/openDescription";
+import BlackBtn from "@/components/buttons/BlackBtn";
+import { RiBookmarkFill, RiBookmarkLine } from "@remixicon/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,6 +65,7 @@ const ProductDetail = () => {
               {/* Product Info */}
               <div className="product_page__info">
                 {/* Colors */}
+                <div className="">
                 <div className="product_page__section">
                   <h3 className="product_page__label text-sm">Color</h3>
                   <div className="product_page__colors">
@@ -77,6 +80,7 @@ const ProductDetail = () => {
                           className="product_page__color_inner"
                           style={{ backgroundColor: color }}
                         ></div>
+                        <p>{color}</p>
                       </div>
                     ))}
                   </div>
@@ -94,22 +98,26 @@ const ProductDetail = () => {
                         onClick={() => setActiveSize(size)}
                       >
                         <p className="text-base">{size}</p>
-                        {activeSize === size && (
+                        {/* {activeSize === size && (
                           <div className="product_page__dot"></div>
-                        )}
+                        )} */}
                       </div>
                     ))}
                   </div>
                 </div>
+                </div>
 
                 {/* Buttons */}
-                <div className="product_page__actions">
-                  <button className="product_page__btn product_page__btn--light">
-                    <p className="text-base">Direct purchase</p>
-                  </button>
-                  <button className="product_page__btn product_page__btn--dark">
-                    <p className="text-base">Add to bag</p>
-                  </button>
+                <div className="productDetail_addtocart">
+                  <BlackBtn text={"Add To Cart"} />
+                  <div className="productDetail_btn_icon center">
+                    <div className="icon_pr">
+                      <RiBookmarkLine size={17}/>
+                    </div>
+                    <div className="icon_pr">
+                      <RiBookmarkFill size={17}/>
+                    </div>
+                  </div>
                 </div>
 
                 {/* Extra Info */}

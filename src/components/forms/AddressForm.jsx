@@ -1,6 +1,7 @@
 import { RiCheckLine } from '@remixicon/react'
 import gsap from 'gsap'
 import React, { useEffect } from 'react'
+import BlackBtn from '../buttons/BlackBtn'
 
 const AddressForm = ({ user, expandAddressForm, setExpandAddressForm }) => {
 
@@ -42,11 +43,8 @@ const AddressForm = ({ user, expandAddressForm, setExpandAddressForm }) => {
                         <input type="text" placeholder="" defaultValue={user.address.country} name="" id="" />
                         <RiCheckLine className='check_icon' />
                     </div>
-                    <button className='submit_form_btn'>
-                        <p>
-                            Save
-                        </p>
-                    </button>
+                    <BlackBtn text={"Save"} />
+
                     <button type='button' onClick={() => setExpandAddressForm(false)} className='cancel_form_btn'>
                         <p>
                             Cancel

@@ -110,21 +110,6 @@ const Settings = () => {
                         <PasswordForm user={user} expandPasswordForm={expandPasswordForm} setExpandPasswordForm={setExpandPasswordForm} />
                     </div>
 
-                    {/* Privacy Portal */}
-                    <div className="checkout_thin_line"></div>
-                    <div className="settings__privacy">
-                        <p className="settings__privacy_link">
-                            Go to My privacy portal
-                        </p>
-                        <p className="settings__privacy_text text-sm">
-                            On H&M Group&apos;s privacy portal you can see your subscriptions,
-                            accounts, memberships and/or guest profiles connected to your
-                            email address across our brands and countries. Here you can edit
-                            subscriptions, request a copy of your data or choose to delete
-                            your account.
-                        </p>
-                    </div>
-
                     {/* Sign out */}
                     <div className="checkout_thin_line"></div>
                     <div className="settings__link">

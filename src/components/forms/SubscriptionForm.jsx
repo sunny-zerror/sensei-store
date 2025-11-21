@@ -1,5 +1,6 @@
 import gsap from 'gsap'
 import React, { useEffect } from 'react'
+import BlackBtn from '../buttons/BlackBtn'
 
 const SubscriptionForm = ({ user, expandSubscribeForm, setExpandSubscribeForm }) => {
 
@@ -17,48 +18,45 @@ const SubscriptionForm = ({ user, expandSubscribeForm, setExpandSubscribeForm })
                     <p> Newsletter</p>
                     <div className="subscription_btn_paren">
 
-                    {
-                        user.subscriptions.newsletter === "Subscribed" ?
-                        <button className='subscribe_btn'>
-                                <p className='text-xs'>
-                                    Remove
-                                </p>
-                            </button>
-                            :
-                            <button className='unSubscribe_btn'>
-                                <p className='text-xs'>
-                                    Add
-                                </p>
-                            </button>
-                    }
+                        {
+                            user.subscriptions.newsletter === "Subscribed" ?
+                                <button className='subscribe_btn'>
+                                    <p className='text-xs'>
+                                        Remove
+                                    </p>
+                                </button>
+                                :
+                                <button className='unSubscribe_btn'>
+                                    <p className='text-xs'>
+                                        Add
+                                    </p>
+                                </button>
+                        }
                     </div>
                 </div>
                 <div className="subscription_div">
                     <p> Direct Mail Marketing</p>
                     <div className="subscription_btn_paren">
 
-                    {
-                        user.subscriptions.directMail === "Subscribed" ?
-                        <button className='subscribe_btn'>
-                                <p className='text-xs'>
-                                    remove
-                                </p>
-                            </button>
-                            :
-                            <button className='unSubscribe_btn'>
-                                <p className='text-xs'>
-                                    add
-                                </p>
-                            </button>
-                    }
+                        {
+                            user.subscriptions.directMail === "Subscribed" ?
+                                <button className='subscribe_btn'>
+                                    <p className='text-xs'>
+                                        remove
+                                    </p>
+                                </button>
+                                :
+                                <button className='unSubscribe_btn'>
+                                    <p className='text-xs'>
+                                        add
+                                    </p>
+                                </button>
+                        }
                     </div>
                 </div>
 
-                <button className='submit_form_btn'>
-                    <p>
-                        Save
-                    </p>
-                </button>
+                <BlackBtn text={"Save"} />
+
                 <button onClick={() => setExpandSubscribeForm(false)} className='cancel_form_btn'>
                     <p>
                         Cancel

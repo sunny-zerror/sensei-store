@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
 import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import BlackBtn from "../buttons/BlackBtn";
 
 const Signup = ({ setToggle }) => {
   const [visible, setVisible] = useState(false);
@@ -33,13 +35,13 @@ const Signup = ({ setToggle }) => {
             </div>
           </div>
 
-          <div className="inp-rel">
-            <input
-              className="login-inp text-base"
-              placeholder="Contact"
-              type="contact"
-              required
+           <div className=" inp-rel login-inp">
+            <PhoneInput
+              defaultCountry="in"
+              inputClassName=""
+              className="  tele_inp  "
             />
+            <input type="hidden" />
           </div>
 
           <div className="inp-rel">
@@ -81,11 +83,9 @@ const Signup = ({ setToggle }) => {
             />
           </div>
 
-          <button type="submit" className="login-btn">
-            <p>
-              Signup
-            </p>
-          </button>
+          <div className="login-btn">
+          <BlackBtn text={"Sign Up"} />
+          </div>
         </form>
 
         <div className="not-up">

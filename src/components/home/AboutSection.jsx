@@ -24,7 +24,7 @@ const AboutSection = () => {
 
       <div className="home_aboutSection_hero background">
 
-       <h3 className="home_aboutSection_title text-5xl">
+       <h3 className="home_aboutSection_title text-6xl">
         OUR JOURNEY <span className="rotate_animation"> ✺</span> FUELED BY PASSION FOR
         ANIME <span className="rotate_animation"> ✦</span> AND AUTHENTICITY.
       </h3>

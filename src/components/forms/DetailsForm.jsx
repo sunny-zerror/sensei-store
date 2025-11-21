@@ -1,6 +1,9 @@
 import { RiCheckLine } from '@remixicon/react'
 import gsap from 'gsap'
 import React, { useEffect } from 'react'
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
+import BlackBtn from '../buttons/BlackBtn';
 
 const DetailsForm = ({ user, expandDetailForm, setExpandDetailForm }) => {
 
@@ -17,7 +20,13 @@ const DetailsForm = ({ user, expandDetailForm, setExpandDetailForm }) => {
             <div className="details_form_paren">
                 <form action="">
                     <div className="inp_paren text-base">
-                        <p className='text-sm '>Name <span>*</span> </p>
+                        <p className='text-sm '>First Name <span>*</span> </p>
+                        <input type="text" placeholder="" defaultValue={user.name} name="" id="" />
+                        <p className='input_error_msg text-xs'>Error Message</p>
+                        <RiCheckLine className='check_icon' />
+                    </div>
+                    <div className="inp_paren text-base">
+                        <p className='text-sm '>Last Name <span>*</span> </p>
                         <input type="text" placeholder="" defaultValue={user.name} name="" id="" />
                         <p className='input_error_msg text-xs'>Error Message</p>
                         <RiCheckLine className='check_icon' />
@@ -29,7 +38,13 @@ const DetailsForm = ({ user, expandDetailForm, setExpandDetailForm }) => {
                     </div>
                     <div className="inp_paren text-base">
                         <p className='text-sm '>Contact <span>*</span> </p>
-                        <input type="tel" placeholder="" defaultValue={user.phone} name="" id="" />
+                        <div className="settings_input">
+                            <PhoneInput
+                                defaultCountry="in"
+                                className="delivery__phone_btn"
+                                inputClassName="delivery__input__phone"
+                            />
+                        </div>
                         <RiCheckLine className='check_icon' />
                     </div>
                     <div className="inp_paren text-base">
@@ -37,11 +52,7 @@ const DetailsForm = ({ user, expandDetailForm, setExpandDetailForm }) => {
                         <input type="date" placeholder="" defaultValue={user.dob} name="" id="" />
                         <RiCheckLine className='check_icon' />
                     </div>
-                    <button className='submit_form_btn'>
-                        <p>
-                            Save
-                        </p>
-                    </button>
+                      <BlackBtn text={"Save"} />
                     <button type='button' onClick={() => setExpandDetailForm(false)} className='cancel_form_btn'>
                         <p>
                             Cancel

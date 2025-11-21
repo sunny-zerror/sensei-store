@@ -54,7 +54,7 @@ const ProductCard = ({ product, gridCol }) => {
             className={`productCard_quickAddInner ${gridCol === 8 ? "productCard_quickAddInner--small" : ""
               }`}
           >
-            <p className={` ${gridCol === 8 ? "text-xs" : "text-base"} `}>Quick Add</p>
+            <p className={` ${gridCol === 8 ? "text-xs" : "text-base"} `}>Add to Cart</p>
           </div>
         </div>
 

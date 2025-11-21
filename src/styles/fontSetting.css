@@ -16,13 +16,13 @@ body {
 @media (min-width: 750px) {
   html,
   body {
-    font-size: 1.8vw;
+    font-size: 1.3vw;
   }
 }
 @media (min-width: 1020px) {
   html,
   body {
-    font-size: 1vw;
+    font-size: .9vw;
   }
 }
 a {
@@ -113,6 +113,6 @@ h2 {
 }
 
 .text-9xl {
-  font-size: 8rem; /* 128px */
+  font-size: 8.5rem; /* 128px */
   line-height: 1;
 }

@@ -16,19 +16,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -67,19 +67,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -118,19 +118,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -169,19 +169,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -220,19 +220,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -272,19 +272,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",
@@ -324,19 +324,19 @@ const Products = [
     ],
     aboutProduct: [
       {
-        title: "Details",
+        title: "Product Details",
         img: "https://oflyn.fr/cdn/shop/files/bucketstub.webp?v=1741614525&width=1920",
         desc: [
           "Some memories fade, others remain. Amnesia captures what is lost in time.",
           "Embroidered Typography: For a lasting imprint, highlighting the design and message of the bucket hat.",
           "Metal Rivets: Two hand-placed metal rivets for a raw, authentic detail.",
-          "Reinforced Edge: With stitching details and side eyelets for added durability and ventilation.",
+          "Reinforced Edge: With stitching Product Details and side eyelets for added durability and ventilation.",
           "Light to Medium Cotton: 100% cotton, chosen for its lightness and structure, providing comfort and support.",
           "Universal Size: Designed to fit all head sizes."
         ]
       },
       {
-        title: "Interview",
+        title: "Instructions",
         img: "https://oflyn.fr/cdn/shop/files/Amnesia-Focus.webp?v=1741616541&width=1920",
         desc: [
           "Washing Instructions",

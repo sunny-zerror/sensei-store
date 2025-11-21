@@ -1,6 +1,7 @@
 import { RiCheckLine } from '@remixicon/react'
 import gsap from 'gsap'
 import React, { useEffect } from 'react'
+import BlackBtn from '../buttons/BlackBtn'
 
 const PasswordForm = ({ user, expandPasswordForm, setExpandPasswordForm }) => {
 
@@ -18,22 +19,19 @@ const PasswordForm = ({ user, expandPasswordForm, setExpandPasswordForm }) => {
                 <form action="">
                     <div className="inp_paren text-base">
                         <p className='text-sm '>Current Password<span>*</span> </p>
-                        <input type="text" placeholder="Enter Current Password"  name="" id="" />
+                        <input type="text" placeholder="Enter Current Password" name="" id="" />
                         <p className='input_error_msg text-xs'>Error Message</p>
                         <RiCheckLine className='check_icon' />
                     </div>
                     <div className="inp_paren text-base">
                         <p className='text-sm '>New Password <span>*</span> </p>
-                        <input type="text" placeholder="Enter New Password"  name="" id="" />
+                        <input type="text" placeholder="Enter New Password" name="" id="" />
                         <p className='input_error_msg text-xs'>Error Message</p>
 
                         <RiCheckLine className='check_icon' />
                     </div>
-                    <button className='submit_form_btn'>
-                        <p>
-                            Save
-                        </p>
-                    </button>
+                    <BlackBtn text={"Save"} />
+
                     <button type='button' onClick={() => setExpandPasswordForm(false)} className='cancel_form_btn'>
                         <p>
                             Cancel

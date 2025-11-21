@@ -182,7 +182,7 @@
 .mobile_input_paren{
   display: none;
 }
-@media (max-width: 750px) {
+@media (max-width: 1020px) {
   .mobile_input_paren{
     display: block;
   }

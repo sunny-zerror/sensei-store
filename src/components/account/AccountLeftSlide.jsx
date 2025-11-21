@@ -11,7 +11,7 @@ const AccountLeftSlide = () => {
                 
                 <div className="accountLeftSlide_pointsSection text-base">
                     <div>
-                        <p className="accountLeftSlide_text15">Welcome, Sunny</p>
+                        <h3 className="accountLeftSlide_text15">Welcome, Sunny</h3>
                         <p className="accountLeftSlide_text15">
                             200 Points to bonus reward
                         </p>

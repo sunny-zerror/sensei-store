@@ -10,18 +10,18 @@ const ThankYou = () => {
           src="/gifs/success.gif"
           alt="payment successfull"
         />
-        <h3 className="uppercase text-3xl">
+        <p className="uppercase bold text-3xl">
           Thank You <br /> for Your Purchase !
-        </h3>
-        <p className="text-base">
+        </p>
+        <p className="text-lg">
           Your payment has been successfully processed. We’re preparing your
           order and will send you updates soon. Thank you for shopping.
         </p>
-        <p className="text-base">
+        <p className="text-lg">
           You will be redirected to the home page in
           seconds
         </p>
-        <Link href="/">Go Back to home page</Link>
+        <Link href="/" className="text-lg">Go Back to home page</Link>
       </div>
     </>
   );

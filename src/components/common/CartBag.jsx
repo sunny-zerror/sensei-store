@@ -1,12 +1,14 @@
-import { RiCloseLine } from '@remixicon/react';
+import Products from '@/utils/data/Products';
+import { RiCloseLine, RiDeleteBinLine } from '@remixicon/react';
 import gsap from 'gsap';
 import Link from 'next/link'
 import React, { useEffect } from 'react'
+import BlackBtn from '../buttons/BlackBtn';
 
 const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
 
     useEffect(() => {
-        if (window.innerWidth < 1020) {
+        if (window.innerWidth < 750) {
             if (openCartBag) {
                 const tedv = gsap.timeline();
                 tedv.to(".cartBag_openBagParent", {
@@ -36,6 +38,7 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
 
         } else {
             if (openCartBag) {
+                if (window.lenis) window.lenis.stop();
                 const tedv = gsap.timeline();
                 tedv.to(".cartBag_openBagParent", {
                     opacity: 1,
@@ -49,6 +52,7 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                     }, "<+=0.1")
 
             } else {
+                if (window.lenis) window.lenis.start();
                 const dsc = gsap.timeline();
                 dsc.to(".cartBag_openBagParent", {
                     opacity: 0,
@@ -81,32 +85,40 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                 </div>
 
                 <div data-lenis-prevent className="cartBag_bagScroll">
-                    {[1, 2, 3].map((_, index) => (
+                    {Products.map((item, index) => (
                         <div key={index} className="cartBag_bagItem">
                             <div className="cartBag_bagItemInner">
                                 <div className="cartBag_bagImageWrapper">
-                                    <img
-                                        className="cartBag_bagImage"
-                                        src="https://oflyn.fr/cdn/shop/files/Remorse-W-Back.webp?v=1741681377&width=580"
-                                        alt=""
-                                    />
+                                    <Link onClick={() => setOpenCartBag(false)} key={index} href={`/products/${item.slug}`} className='cartBag_bagImage'>
+                                        <img
+                                            className="cartBag_bagImage"
+                                            src={item.images[0]}
+                                            alt=""
+                                        />
+                                    </Link>
                                 </div>
                                 <div className="cartBag_bagItemDetails">
                                     <div className="cartBag_bagItemTop">
                                         <div>
-                                            <h3 className="cartBag_itemName text-base">Product Name</h3>
-                                            <h3 className="cartBag_itemSize text-sm">Size</h3>
+                                            <h3 className="cartBag_itemName text-sm">{item.name}</h3>
+                                            <p className="cartBag_itemSize text-xs">Color - Gold</p>
+                                            <p className="cartBag_itemSize text-xs">Size - 16</p>
+
                                         </div>
-                                        <h3 className='text-base'>₹ 599</h3>
+                                        <h3 className='text-base'>₹ {item.price}</h3>
                                     </div>
                                     <div className="cartBag_bagItemBottom">
-                                        <div className="cartBag_qtyControl text-base">
-                                            <p>−</p>
+                                        <div className="cartBag_qtyControl text-sm">
+                                            <div className="cartBag_qtyControl_dec">
+                                                <p>−</p>
+                                            </div>
                                             <p>1</p>
-                                            <p>+</p>
+                                            <div className="cartBag_qtyControl_inc">
+                                                <p>+</p>
+                                            </div>
                                         </div>
                                         <div className="cartBag_removeButton">
-                                            <p className="cartBag_removeText underline text-xs">Remove</p>
+                                            <RiDeleteBinLine size={14} />
                                         </div>
                                     </div>
                                 </div>
@@ -121,14 +133,16 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                         <h3>₹ 1,797</h3>
                     </div>
                     <Link href="/checkout">
-                    <div
-                        onClick={() => { setOpenCartBag(false) }}
-                        className="cartBag_checkoutButton">
-                            <p className='text-base uppercase'>Checkout</p>
-                    </div>
-                        </Link>
+                        <div
+                            onClick={() => { setOpenCartBag(false) }}
+                            className="">
+                            <BlackBtn text={"Checkout"} />
+                        </div>
+                    </Link>
                     <div className="cartBag_continueShopping">
-                        <p className="cartBag_continueText text-sm underline">Continue Shopping</p>
+                        <p
+                            onClick={() => { setOpenCartBag(false) }}
+                            className="cartBag_continueText text-sm underline">Continue Shopping</p>
                     </div>
                 </div>
             </div>

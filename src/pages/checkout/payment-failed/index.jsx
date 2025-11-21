@@ -11,14 +11,14 @@ const PaymentFailed = () => {
           className="fail_gif"
           alt="payment failed"
         />
-        <h3 className="uppercase text-3xl">
+        <p className="uppercase bold text-3xl">
           Payment Failed
-        </h3>
-        <p className="text-base">
+        </p>
+        <p className="text-lg">
           Unfortunately, your payment could not be processed. Please try again
           to complete your order.
         </p>
-        <Link href="/">Go Back to home page</Link>
+        <Link href="/" className="text-lg">Go Back to home page</Link>
       </div>
     </>
   );

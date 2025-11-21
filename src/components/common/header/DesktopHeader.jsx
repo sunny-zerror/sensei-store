@@ -50,6 +50,7 @@ const DesktopHeader = () => {
     <>
       <div
         onMouseMove={() => { setNavHover(false), setActiveCategory(null) }}
+        onClick={()=>setOpenCartBag(false)}
         ref={headerOverlayRef}
         className="header_overlay scroller_none"
       />

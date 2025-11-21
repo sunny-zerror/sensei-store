@@ -8,6 +8,7 @@ import {
 } from "@remixicon/react";
 import Link from "next/link";
 import React, { useState } from "react";
+import BlackBtn from "../buttons/BlackBtn";
 
 const Footer = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -104,9 +105,9 @@ const footerLinks = {
                 type="text"
                 placeholder="Enter Email Address"
               />
-              <button className="footer_button">
-                <p className="text-sm">Subscribe</p>
-              </button>
+              <div className="footer_btn">
+              <BlackBtn text={"Subscribe"} />
+              </div>
             </div>
           </div>
         </div>
