@@ -9,11 +9,17 @@ export default function DesktopImageSlider({ images = [] }) {
   const thumbsRef = useRef([]);
 
   useEffect(() => {
+    if (!slidesRef.current.length) return;
+
+    // FILTER OUT NULL ELEMENTS — IMPORTANT
+    const slideEls = slidesRef.current.filter(Boolean);
+    const thumbEls = thumbsRef.current.filter(Boolean);
+
     // cleanup existing triggers
     ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
     const setActiveThumbnail = (index) => {
-      thumbsRef.current.forEach((thumb, i) => {
+      thumbEls.forEach((thumb, i) => {
         thumb.classList.remove(
           "DesktopImageSlider_is_active",
           "DesktopImageSlider_is_prev"
@@ -23,30 +29,22 @@ export default function DesktopImageSlider({ images = [] }) {
       });
     };
 
-    // setup scroll triggers for each slide
-    slidesRef.current.forEach((slide, i) => {
-      const nextSlide = slidesRef.current[i + 1];
-      const img = slide.querySelector("img");
+    slideEls.forEach((slide, i) => {
+      const nextSlide = slideEls[i + 1];
+      const img = slide?.querySelector?.("img");
+      if (!img) return;
 
-      // ✅ Scale-up effect for the previous image
       if (nextSlide) {
-        const tl = gsap.timeline({
+        gsap.timeline({
           scrollTrigger: {
             trigger: nextSlide,
-            start: "top bottom", // when next starts entering
-            end: "top top", // until it's half-visible
+            start: "top bottom",
+            end: "top top",
             scrub: true,
           },
-        });
-
-        tl.fromTo(
-          img,
-          { scale: 1 },
-          { scale: 1.2, ease: "linear" }
-        );
+        }).fromTo(img, { scale: 1 }, { scale: 1.2 });
       }
 
-      // ✅ Set active thumbnail on scroll
       ScrollTrigger.create({
         trigger: slide,
         start: "top 50%",
@@ -58,10 +56,15 @@ export default function DesktopImageSlider({ images = [] }) {
 
     setActiveThumbnail(0);
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
+    return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, [images]);
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+    });
+  }, []);
+
 
   return (
     <div className="DesktopImageSlider_container">
@@ -71,9 +74,8 @@ export default function DesktopImageSlider({ images = [] }) {
           key={i}
           ref={(el) => (slidesRef.current[i] = el)}
           data-index={i}
-          className={`DesktopImageSlider_slide ${
-            i === 0 ? "DesktopImageSlider_firstSlide" : ""
-          }`}
+          className={`DesktopImageSlider_slide ${i === 0 ? "DesktopImageSlider_firstSlide" : ""
+            }`}
         >
           <img
             src={image}

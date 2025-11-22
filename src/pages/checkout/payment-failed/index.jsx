@@ -18,7 +18,7 @@ const PaymentFailed = () => {
           Unfortunately, your payment could not be processed. Please try again
           to complete your order.
         </p>
-        <Link href="/" className="text-lg">Go Back to home page</Link>
+        <Link scroll={false} href="/" className="text-lg">Go Back to home page</Link>
       </div>
     </>
   );

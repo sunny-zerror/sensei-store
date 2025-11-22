@@ -102,7 +102,7 @@ const HeroSwiper = () => {
         modules={[Navigation, A11y, Autoplay, Pagination]}
         spaceBetween={0}
         slidesPerView={1}
-        speed={500}
+        speed={800}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,

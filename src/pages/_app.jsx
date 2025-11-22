@@ -6,6 +6,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import ScrollTrigger from "gsap/dist/ScrollTrigger";
 import gsap from "gsap";
+import PageTransition from "@/components/common/PageTransition";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App({ Component, pageProps }) {
@@ -18,13 +19,15 @@ export default function App({ Component, pageProps }) {
     }, 500);
     return () => clearTimeout(timeout);
   }, [router.asPath]);
-  
+
   return (
     <>
       <LenisScroll />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <PageTransition routeKey={router.asPath}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </PageTransition>
     </>
   );
 }

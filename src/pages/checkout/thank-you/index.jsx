@@ -21,7 +21,7 @@ const ThankYou = () => {
           You will be redirected to the home page in
           seconds
         </p>
-        <Link href="/" className="text-lg">Go Back to home page</Link>
+        <Link scroll={false} href="/" className="text-lg">Go Back to home page</Link>
       </div>
     </>
   );

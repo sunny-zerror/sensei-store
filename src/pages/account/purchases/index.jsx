@@ -41,7 +41,7 @@ const Index = () => {
             </div>
 
             <div className="purchases_breadcrumb">
-                <Link href="/account">
+                <Link scroll={false} href="/account">
                     <p className="purchases_breadcrumbLink text-sm">Account</p>
                 </Link>
                 <RiArrowRightSLine size={14} />

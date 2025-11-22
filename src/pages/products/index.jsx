@@ -45,7 +45,7 @@ const AllProducts = () => {
                         <div className="trending_product_header_top_inner trending_anim_ttxt text-sm">
                             <p>Shoes</p>
                             <RiArrowRightSLine size={14} />
-                            <Link href="/allproducts">
+                            <Link scroll={false} href="/allproducts">
                                 <p>Shop All</p>
                             </Link>
                         </div>
@@ -108,7 +108,7 @@ const AllProducts = () => {
                     }}
                 >
                     {Products?.map((product, idx) => (
-                        <Link href={`/products/${product.slug}`} key={idx}>
+                        <Link scroll={false} href={`/products/${product.slug}`} key={idx}>
                             <ProductCard product={product} gridCol={gridCol} />
                         </Link>
                     ))}

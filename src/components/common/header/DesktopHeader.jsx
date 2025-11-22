@@ -50,7 +50,7 @@ const DesktopHeader = () => {
     <>
       <div
         onMouseMove={() => { setNavHover(false), setActiveCategory(null) }}
-        onClick={()=>setOpenCartBag(false)}
+        onClick={() => setOpenCartBag(false)}
         ref={headerOverlayRef}
         className="header_overlay scroller_none"
       />
@@ -60,7 +60,7 @@ const DesktopHeader = () => {
       </div>
 
       <div className="header_logo">
-        <Link href="/">
+        <Link scroll={false} href="/">
           <h3 className='text-xl'>THE SENSEI'S STORE</h3>
         </Link>
       </div>
@@ -141,12 +141,12 @@ const DesktopHeader = () => {
 
             <div className="desktop_header_nav_btn">
 
-              <Link href="/login">
+              <Link scroll={false} href="/login">
                 <div className="desktop_header_left_btn glass ">
                   <RiUserLine size={16} />
                 </div>
               </Link>
-              <Link href="/account/wishlist">
+              <Link scroll={false} href="/account/wishlist">
                 <div className="desktop_header_left_btn glass ">
                   <RiBookmarkLine size={16} />
                 </div>

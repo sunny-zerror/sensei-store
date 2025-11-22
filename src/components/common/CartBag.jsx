@@ -89,7 +89,7 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                         <div key={index} className="cartBag_bagItem">
                             <div className="cartBag_bagItemInner">
                                 <div className="cartBag_bagImageWrapper">
-                                    <Link onClick={() => setOpenCartBag(false)} key={index} href={`/products/${item.slug}`} className='cartBag_bagImage'>
+                                    <Link scroll={false} onClick={() => setOpenCartBag(false)} key={index} href={`/products/${item.slug}`} className='cartBag_bagImage'>
                                         <img
                                             className="cartBag_bagImage"
                                             src={item.images[0]}
@@ -132,7 +132,7 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                         <h3>Total</h3>
                         <h3>₹ 1,797</h3>
                     </div>
-                    <Link href="/checkout">
+                    <Link scroll={false} href="/checkout">
                         <div
                             onClick={() => { setOpenCartBag(false) }}
                             className="">

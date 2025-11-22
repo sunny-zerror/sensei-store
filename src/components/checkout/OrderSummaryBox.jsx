@@ -15,15 +15,15 @@ const OrderSummaryBox = ({ user, quantity, setQuantity }) => {
                 <div className="summary_products_paren">
                     {Products.slice(0, 2).map((item, index) => (
                         <div key={index} className="checkout_item">
-                                <div className="checkout_imgWrapper">
-                            <Link href={`/products/${item.slug}`} >
+                            <div className="checkout_imgWrapper">
+                                <Link scroll={false} href={`/products/${item.slug}`} >
                                     <img
                                         className="checkout_productImg"
                                         src={item.images[0]}
                                         alt=""
                                     />
-                            </Link>
-                                </div>
+                                </Link>
+                            </div>
 
                             <div className="checkout_details">
                                 <div className="checkout_topRow">

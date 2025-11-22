@@ -60,7 +60,7 @@ const NavCategoryDrop = ({
 
       tl.fromTo(
         contentAnimRef.current.children,
-        { opacity: 0},
+        { opacity: 0 },
         {
           opacity: 1,
           duration: 0.5,
@@ -93,7 +93,7 @@ const NavCategoryDrop = ({
                     <div className="navCategoryDrop__link_list navCategoryDrop__link_list_large">
                       {section.items.map((item, i) => (
                         <div key={i} className="navCategoryDrop__link_item">
-                          <Link
+                          <Link scroll={false}
                             href="/products"
                             onClick={() => setNavHover(false)}
                           >
@@ -113,7 +113,7 @@ const NavCategoryDrop = ({
                     <div className="navCategoryDrop__link_list navCategoryDrop__link_list_small">
                       {section.items.map((item, i) => (
                         <div key={i} className="navCategoryDrop__link_item">
-                          <Link
+                          <Link scroll={false}
                             href="/products"
                             onClick={() => setNavHover(false)}
                           >

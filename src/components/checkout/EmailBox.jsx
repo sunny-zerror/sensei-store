@@ -11,13 +11,13 @@ const EmailBox = ({ user }) => {
             <div className="checkout_user_details">
                 <div className="checkout_user_detailsHeader">
                     <h3 className="checkout_subHeading text-base uppercase">Email</h3>
-                    <Link href="/login">
+                    <Link scroll={false} href="/login">
                         <div className="settings__link">
                             <p className="underline uppercase text-sm">Login</p>
                         </div>
                     </Link>
                 </div>
-                        <CheckoutInput placeholder="Email" />
+                <CheckoutInput placeholder="Email" />
                 <div onClick={() => setAcceptEmailOfferBtn(!acceptEmailOfferBtn)} className="cards_inner_content">
                     <div className={`check_box_div center ${acceptEmailOfferBtn ? "check_box_div_active" : ""} `}>
                         {acceptEmailOfferBtn && <RiCheckLine size={14} />}

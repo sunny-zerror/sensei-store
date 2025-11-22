@@ -87,7 +87,7 @@ const MobileCategoryDrop = () => {
                                                 <div className="mobileNav_itemsList">
                                                     {hero.items.map((item, hIndex) => (
                                                         <div key={hIndex} className="mobileNav_itemRow">
-                                                            <Link href={item.url} className="mobileNav_itemLink">
+                                                            <Link scroll={false} href={item.url} className="mobileNav_itemLink">
                                                                 <p className='text-base'>
                                                                     {item.title}
                                                                 </p>
@@ -116,7 +116,7 @@ const MobileCategoryDrop = () => {
                                                 <div className="mobileNav_itemsList">
                                                     {section.items.map((item, secIndex) => (
                                                         <div key={secIndex} className="mobileNav_itemRow">
-                                                            <Link href={item.url} className="mobileNav_itemLink">
+                                                            <Link scroll={false} href={item.url} className="mobileNav_itemLink">
                                                                 <p className='text-base'>
                                                                     {item.title}
                                                                 </p>
@@ -133,16 +133,16 @@ const MobileCategoryDrop = () => {
                     </div>
 
                     <div className="mobileNav_moreSection">
-                        <Link onClick={closeMenu} href="/login">
+                        <Link scroll={false} onClick={closeMenu} href="/login">
                             <h3 className="mobileNav_moreItem text-2xl ">Login / Signup</h3>
                         </Link>
-                        <Link onClick={closeMenu} href="/account">
+                        <Link scroll={false} onClick={closeMenu} href="/account">
                             <h3 className="mobileNav_moreItem text-2xl ">My Account</h3>
                         </Link>
-                        <Link onClick={closeMenu} href="/account/purchases">
+                        <Link scroll={false} onClick={closeMenu} href="/account/purchases">
                             <h3 className="mobileNav_moreItem text-2xl ">My Orders</h3>
                         </Link>
-                        <Link onClick={closeMenu} href="/account/wishlist">
+                        <Link scroll={false} onClick={closeMenu} href="/account/wishlist">
                             <h3 className="mobileNav_moreItem text-2xl ">My Wishlist</h3>
                         </Link>
                     </div>

@@ -17,23 +17,23 @@ const Footer = () => {
     setOpenSection(openSection === section ? null : section);
   };
 
-const footerLinks = {
-  shop: [
-    { title: "Accessories", href: "/shop/accessories" },
-    { title: "Cosplay Costumes", href: "/shop/cosplay-costumes" },
-    { title: "Posters & Wall Art", href: "/shop/posters-wall-art" },
-    { title: "Figures & Collectibles", href: "/shop/figures-collectibles" },
-    { title: "Apparel & Streetwear", href: "/shop/apparel-streetwear" }
-  ],
+  const footerLinks = {
+    shop: [
+      { title: "Accessories", href: "/shop/accessories" },
+      { title: "Cosplay Costumes", href: "/shop/cosplay-costumes" },
+      { title: "Posters & Wall Art", href: "/shop/posters-wall-art" },
+      { title: "Figures & Collectibles", href: "/shop/figures-collectibles" },
+      { title: "Apparel & Streetwear", href: "/shop/apparel-streetwear" }
+    ],
 
-  help: [
-    { title: "FAQs", href: "/faqs" },
-    { title: "privacy-policy", href: "/privacy-policy" },
-    { title: "Contact Support", href: "/contact-support" },
-    { title: "Shipping & Returns", href: "shipping-returns" },
-    { title: "Return & Refund Policy", href: "/return-refund-policy" }
-  ]
-};
+    help: [
+      { title: "FAQs", href: "/faqs" },
+      { title: "privacy-policy", href: "/privacy-policy" },
+      { title: "Contact Support", href: "/contact-support" },
+      { title: "Shipping & Returns", href: "shipping-returns" },
+      { title: "Return & Refund Policy", href: "/return-refund-policy" }
+    ]
+  };
 
 
   const socialLinks = [
@@ -50,7 +50,7 @@ const footerLinks = {
     >
       <div className="footer_links_group">
         {footerLinks[section].map((link, idx) => (
-          <Link href={link.href} key={idx} className="footer_link_item">
+          <Link scroll={false} href={link.href} key={idx} className="footer_link_item">
             {link.title}
           </Link>
         ))}
@@ -106,7 +106,7 @@ const footerLinks = {
                 placeholder="Enter Email Address"
               />
               <div className="footer_btn">
-              <BlackBtn text={"Subscribe"} />
+                <BlackBtn text={"Subscribe"} />
               </div>
             </div>
           </div>

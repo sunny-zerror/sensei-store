@@ -36,7 +36,7 @@ const Settings = () => {
             </div>
 
             <div className="settings__breadcrumb">
-                <Link href={"/account"}>
+                <Link scroll={false} href={"/account"}>
                     <p className="settings__breadcrumb_faded text-sm">Account</p>
                 </Link>
                 <RiArrowRightSLine size={14} />

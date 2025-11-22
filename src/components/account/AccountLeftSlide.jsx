@@ -8,7 +8,7 @@ const AccountLeftSlide = () => {
     return (
         <div>
             <div className="accountLeftSlide">
-                
+
                 <div className="accountLeftSlide_pointsSection text-base">
                     <div>
                         <h3 className="accountLeftSlide_text15">Welcome, Sunny</h3>
@@ -32,22 +32,20 @@ const AccountLeftSlide = () => {
 
                 <div className="accountLeftSlide_nav">
                     <div className="accountLeftSlide_navItem_hidden">
-                        <Link href={"/account"}>
+                        <Link scroll={false} href={"/account"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${
-                                    router.pathname === "/account" ? "active" : ""
-                                }`}
+                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account" ? "active" : ""
+                                    }`}
                             >
                                 Account & Rewards
                             </p>
                         </Link>
                     </div>
                     <div>
-                        <Link href={"/account/wishlist"}>
+                        <Link scroll={false} href={"/account/wishlist"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${
-                                    router.pathname === "/account/wishlist" ? "active" : ""
-                                }`}
+                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/wishlist" ? "active" : ""
+                                    }`}
                             >
                                 Wishlist
                             </p>
@@ -55,11 +53,10 @@ const AccountLeftSlide = () => {
                     </div>
 
                     <div>
-                        <Link href={"/account/purchases"}>
+                        <Link scroll={false} href={"/account/purchases"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${
-                                    router.pathname === "/account/purchases" ? "active" : ""
-                                }`}
+                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/purchases" ? "active" : ""
+                                    }`}
                             >
                                 orders
                             </p>
@@ -67,11 +64,10 @@ const AccountLeftSlide = () => {
                     </div>
 
                     <div>
-                        <Link href={"/account/settings"}>
+                        <Link scroll={false} href={"/account/settings"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${
-                                    router.pathname === "/account/settings" ? "active" : ""
-                                }`}
+                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/settings" ? "active" : ""
+                                    }`}
                             >
                                 Account settings
                             </p>

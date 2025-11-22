@@ -51,7 +51,7 @@ const MobileHeader = () => {
                         </button>
 
                         <div className="mobileHeader_logo text-xl">
-                            <Link href="/"><p>The Sensei&apos;s Store</p></Link>
+                            <Link scroll={false} href="/"><p>The Sensei&apos;s Store</p></Link>
                         </div>
 
                         <div className="mobileHeader_rightButtons">
