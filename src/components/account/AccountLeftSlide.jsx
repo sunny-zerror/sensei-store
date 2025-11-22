@@ -27,12 +27,14 @@ const AccountLeftSlide = () => {
                         <p className="accountLeftSlide_text15 accountLeftSlide_text15_points uppercase">
                             Points <span className="accountLeftSlide_highlight">400/1000</span>
                         </p>
+                        <div className="bar_code_img_paren">
                         <img className='bar_code_img' src="/images/Black-barcode-icon.png" alt="" />
+                        </div>
                     </div>
                 </div>
 
                 <div className="accountLeftSlide_nav">
-                    <div>
+                    <div className="accountLeftSlide_navItem_hidden">
                         <Link scroll={false} href={"/account"}>
                             <p
                                 className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account" ? "active" : ""
@@ -55,7 +57,7 @@ const AccountLeftSlide = () => {
                     </div>
 
 
-                    <div className="accountLeftSlide_navItem_hidden">
+                    <div >
                         <Link scroll={false} href={"/account/offers"}>
                             <p
                                 className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account/offers" ? "active" : ""

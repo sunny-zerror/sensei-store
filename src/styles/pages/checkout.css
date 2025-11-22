@@ -60,7 +60,7 @@
 .checkout_leftContainer {
   width: 100%;
   background: #f6f6f6;
-  /* border-radius: 8px; */
+  border-radius: .25rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
@@ -134,11 +134,12 @@
 /* Base select */
 .checkOut_input {
   flex-shrink: 0;
-  background-color: #fff ;
+  background-color: #fff;
   font-size: 1rem;
   width: 100%;
   padding-left: 0.5rem;
   height: 3rem;
+  border-radius: .25rem;
   padding-right: 3rem;
   border: 1px solid #00000050;
   outline: none;
@@ -206,8 +207,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     /* box-shadow: 0px 0px 0.25rem 0.25rem #70707021; */
-  border: 1px solid rgba(0, 0, 0, 0.1);
-
+    border: 1px solid rgba(0, 0, 0, 0.1);
   }
 }
 
@@ -229,19 +229,29 @@
 }
 
 .checkout_imgWrapper {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  border-radius: .25rem;
   width: 30%;
 }
 
 @media (min-width: 768px) {
   .checkout_imgWrapper {
-    width: 20%;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    width: 23%;
   }
 }
 
 .checkout_productImg {
-  aspect-ratio: 3/4;
+  /* scale: 1.1; */
   object-fit: cover;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
+  transition: all 0.3s ease;
+}
+.checkout_productImg:hover{
+  scale: 1.1;
 }
 
 .checkout_details {
@@ -303,6 +313,7 @@
   position: relative;
   width: 100%;
   background: #f6f6f6;
+  border-radius: .25rem;
   /* border-radius: 0.5rem; */
   /* padding: 1rem; */
 }
@@ -316,7 +327,7 @@
 @media (min-width: 768px) {
   .checkout_summaryWrapper {
     /* box-shadow: 0px 0px 0.25rem 0.25rem #70707021; */
-  border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
     position: sticky;
     top: 13rem;
@@ -334,7 +345,7 @@
   padding-left: 0.5rem;
   height: 2.75rem;
   margin-bottom: 2rem;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
   padding-right: 3rem;
   border: 1px solid #00000050;
   outline: none;
@@ -359,8 +370,8 @@
 .checkout_couponBtn:hover {
   opacity: 0.85;
 }
-.subtotal_div{
-  margin-bottom: .5rem;
+.subtotal_div {
+  margin-bottom: 0.5rem;
 }
 .checkout_row {
   display: flex;

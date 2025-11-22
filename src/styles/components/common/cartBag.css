@@ -77,19 +77,16 @@
 }
 
 .cartBag_bagImageWrapper {
+  border-radius: .25rem;
   overflow: hidden;
-  width: 18%;
+  width: 20%;
   aspect-ratio: 3/4;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.cartBag_bagImage{
-  transition: scale 0.3s ease;
-}
-.cartBag_bagImage:hover{
-  scale: 1.05;
-}
+
+
 .cartBag_bagImageWrapper img {
   object-fit: cover;
 }

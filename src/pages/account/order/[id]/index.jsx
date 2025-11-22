@@ -2,7 +2,7 @@ import React from 'react';
 import AccountLeftSlide from '@/components/account/AccountLeftSlide';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { RiDeleteBinLine } from '@remixicon/react';
+import { RiArrowRightSLine, RiDeleteBinLine } from '@remixicon/react';
 
 const orders = [
     {
@@ -111,8 +111,15 @@ const OrderDetail = () => {
     return (
         <div>
             <div className="account_wrapper">
-                <div>
+                <div className="settings__left">
                     <AccountLeftSlide />
+                </div>
+                <div className="settings__breadcrumb">
+                    <Link scroll={false} href={"/orders"}>
+                        <p className="settings__breadcrumb_faded text-sm">Orders</p>
+                    </Link>
+                    <RiArrowRightSLine size={14} />
+                    <p className='text-sm'>order details</p>
                 </div>
 
                 <div className="account_rightSection">
@@ -124,7 +131,7 @@ const OrderDetail = () => {
                             <h3 className='uppercase text-lg'>order number</h3>
                             <p className='text-base'>{id?.id}</p>
                         </div>
-                       
+
                         <div className="">
                             <h3 className='uppercase text-lg'>order date</h3>
                             <p className='text-base'>{order?.orderDate}</p>
@@ -139,7 +146,7 @@ const OrderDetail = () => {
                     <div className="checkout_thin_line"></div>
 
                     <div className="purchases_ordersList">
-                           <div className="">
+                        <div className="">
                             <h3 className='uppercase text-lg'>Amount Paid</h3>
                             <p className='text-base'>Rs. {order?.Totalamount}</p>
                         </div>
@@ -178,13 +185,13 @@ const OrderDetail = () => {
                                     <div key={index} className="order_detailsBagItem">
                                         <div className="cartBag_bagItemInner">
                                             <div className="cartBag_bagImageWrapper">
-                                                <div key={index} className=''>
+                             
                                                     <img
                                                         className="cartBag_bagImage"
                                                         src={item.image}
                                                         alt=""
                                                     />
-                                                </div>
+                                
                                             </div>
                                             <div className="cartBag_bagItemDetails">
                                                 <div className="cartBag_bagItemTop">

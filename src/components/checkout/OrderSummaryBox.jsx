@@ -16,7 +16,7 @@ const OrderSummaryBox = ({ user, quantity, setQuantity }) => {
                     {Products.slice(0, 2).map((item, index) => (
                         <div key={index} className="checkout_item">
                             <div className="checkout_imgWrapper">
-                                <Link scroll={false} href={`/products/${item.slug}`} >
+                                <Link scroll={false} href={`/products/${item.slug}`} className='checkout_productImg'>
                                     <img
                                         className="checkout_productImg"
                                         src={item.images[0]}

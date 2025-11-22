@@ -22,46 +22,45 @@ const offers = [
 ];
 
 const Index = () => {
-    return (
-        <div className="purchases_wrapper">
+  return (
+    <div className="purchases_wrapper">
 
-            <div className="purchases_leftSlide">
-                <AccountLeftSlide />
-            </div>
+      <div className="purchases_leftSlide">
+        <AccountLeftSlide />
+      </div>
 
-            <div className="purchases_breadcrumb">
-                <Link scroll={false} href="/account">
-                    <p className="purchases_breadcrumbLink text-sm">Account</p>
-                </Link>
-                <RiArrowRightSLine size={14} />
-                <p className='text-sm'>Offers</p>
-            </div>
+      <div className="purchases_breadcrumb">
+        <Link scroll={false} href="/account">
+          <p className="purchases_breadcrumbLink text-sm">Account</p>
+        </Link>
+        <RiArrowRightSLine size={14} />
+        <p className='text-sm'>Offers</p>
+      </div>
 
-            <div className="purchases_rightSection">
-                <h3 className="account_heading text-3xl">Account & Rewards</h3>
-
-          <div className="account_gridBox">
-            {offers.map((offer, index) => (
-              <div key={index} className="account_offerCard">
-                <div className="account_imgBox">
-                  <img
-                    className="account_img"
-                    src={offer.img}
-                    alt={offer.title}
-                  />
-                </div>
-
-                <div className="account_offerText">
-                  <h3 className="account_offerTitle text-base uppercase">{offer.title}</h3>
-                  <p className="account_offerValidity text-base">{offer.validity}</p>
-                </div>
-
+      <div className="purchases_rightSection">
+        <h3 className="purchases_heading text-3xl">Order details</h3>
+        <div className="account_gridBox">
+          {offers.map((offer, index) => (
+            <div key={index} className="account_offerCard">
+              <div className="account_imgBox">
+                <img
+                  className="account_img"
+                  src={offer.img}
+                  alt={offer.title}
+                />
               </div>
-            ))}
-          </div>
+
+              <div className="account_offerText">
+                <h3 className="account_offerTitle text-base uppercase">{offer.title}</h3>
+                <p className="account_offerValidity text-base">{offer.validity}</p>
+              </div>
+
             </div>
+          ))}
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
 export default Index

@@ -2,14 +2,14 @@
 
 .account_wrapper {
   width: 100%;
-  padding-bottom: 5rem;
   padding-top: 6rem;
   display: flex;
   flex-direction: column;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .account_wrapper {
+    padding-bottom: 5rem;
     padding-top: 8rem;
     flex-direction: row;
   }
@@ -19,10 +19,11 @@
   height: 100%;
   width: 100%;
   padding-left: 1rem;
+  padding-top: 1rem;
   padding-right: 1rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .account_rightSection {
     width: 60%;
     padding-left: 5rem;
@@ -35,7 +36,7 @@
   text-transform: uppercase;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .account_heading {
     display: block;
   }
@@ -59,7 +60,7 @@
   width: 100%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .wishlist_box{
   margin-top: 2rem;
   width: 50rem;
@@ -78,7 +79,7 @@
   height: fit-content;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .account_offerCard {
     width: 15rem;
   }

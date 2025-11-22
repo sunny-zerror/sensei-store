@@ -8,7 +8,7 @@
   margin-top: 2.5rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1020px) {
   .footer_container {
     gap: 5rem;
     padding: 2.5rem 2.5rem 4.5rem;
@@ -21,7 +21,7 @@
   row-gap: 1.25rem;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 750px) {
   .footer_grid {
     display: flex;
     flex-direction: column;
@@ -36,7 +36,7 @@
   cursor: pointer;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .footer_section_header {
     cursor: default;
   }
@@ -98,7 +98,7 @@
   height: 8rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .footer_links {
     height: auto;
   }
@@ -140,7 +140,7 @@
   width: 100%;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .footer_email_parent {
     width: 100%;
     display: flex;
@@ -179,7 +179,7 @@
   justify-content: space-between;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .footer_bottom {
     flex-direction: row;
     align-items: center;
@@ -224,7 +224,7 @@
 }
 
 /* Responsive: on large screens icons are not scaled initially (matches your lg:scale-100) */
-@media (min-width: 1024px) {
+@media (min-width: 750px) {
   .footer_social_icon {
     transform: scale(1); /* lg:scale-100 */
   }
