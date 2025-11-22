@@ -128,7 +128,7 @@ const CartBag = ({ openCartBag, setOpenCartBag, headerOverlayRef }) => {
                 </div>
 
                 <div className="cartBag_bagFooter">
-                    <div className="cartBag_totalRow text-xl">
+                    <div className="cartBag_totalRow text-lg">
                         <h3>Total</h3>
                         <h3>₹ 1,797</h3>
                     </div>

@@ -163,7 +163,9 @@
   background-color: #b8b8b8;
   top: 0;
   width: 0%;
-  left: 0;
+  left: -1px;
+  border-top-left-radius: 0.25rem;
+  border-bottom-left-radius: 0.25rem;
   height: 100%;
   transition: width 0.3s ease; /* ANIMATION NEEDED */
 }
@@ -173,7 +175,9 @@
   background-color: #b8b8b8;
   top: 0;
   width: 0%;
-  right: 0;
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  right: -1px;
   height: 100%;
   transition: width 0.3s ease; /* ANIMATION NEEDED */
 }

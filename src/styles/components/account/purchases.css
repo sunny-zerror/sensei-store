@@ -69,13 +69,25 @@
 
 /* Orders list */
 .purchases_ordersList {
-  margin-top: 2rem;
+  padding-bottom: 1.5rem;
+  margin-top: 3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
+.orderDetails_cartBag{
+  padding-top: 1rem;
+  width: 35rem;
+}
+.order_detailsBagItem{
+  padding: 1rem 0rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.order_detailsBagItem:last-child{
+  border: none;
+}
 /* Order card */
 .purchases_orderCard {
   display: flex;
@@ -94,12 +106,15 @@
 
 @media (min-width: 1024px) {
   .purchases_itemsGrid {
-    grid-template-columns: 12vw 12vw 12vw 12vw;
+    grid-template-columns: 11vw 11vw 11vw 11vw;
+    gap: .5rem;
   }
 }
 
 .purchases_itemBox {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: 3 / 4;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
   width: 100%;
   overflow: hidden;
 }

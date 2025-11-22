@@ -16,7 +16,7 @@ export default function DesktopImageSlider({ images = [] }) {
     const thumbEls = thumbsRef.current.filter(Boolean);
 
     // cleanup existing triggers
-    ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    // ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
     const setActiveThumbnail = (index) => {
       thumbEls.forEach((thumb, i) => {
@@ -56,7 +56,7 @@ export default function DesktopImageSlider({ images = [] }) {
 
     setActiveThumbnail(0);
 
-    return () => ScrollTrigger.getAll().forEach(t => t.kill());
+    // return () => ScrollTrigger.getAll().forEach(t => t.kill());
   }, [images]);
 
   useEffect(() => {

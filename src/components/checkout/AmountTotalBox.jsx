@@ -15,19 +15,19 @@ const AmountTotalBox = ({ user, setQuantity, quantity }) => {
                     </div>
                 </div>
 
-                <div className="checkout_row text-lg">
-                    <p className="checkout_textBase">Subtotal</p>
-                    <p className="checkout_textBase">₹ {quantity * 999}</p>
+                <div className=" subtotal_div checkout_row ">
+                    <h3 className="checkout_textBase text-base uppercase">Subtotal</h3>
+                    <h3 className="checkout_textBase text-base">₹ {quantity * 999}</h3>
                 </div>
 
-                <div className="checkout_borderRow text-base">
-                    <p className="checkout_textSm">Shipping Charge</p>
-                    <p className="checkout_textSm">₹ 50</p>
+                <div className="checkout_borderRow  uppercase ">
+                    <h3 className="checkout_textSm text-base">Shipping Charge</h3>
+                    <h3 className="checkout_textSm text-base">₹ 50</h3>
                 </div>
 
-                <div className="checkout_row semibold text-2xl">
-                    <p className="checkout_subtotalText">Total Amount</p>
-                    <p className="checkout_subtotalValue">₹ {(quantity * 999) + 50}</p>
+                <div className="checkout_row semibold text-lg">
+                    <h3 className="checkout_subtotalText uppercase">Total </h3>
+                    <h3 className="checkout_subtotalValue">₹ {(quantity * 999) + 50}</h3>
                 </div>
                 
                 <div className="checkout_btn text-base uppercase">

@@ -9,6 +9,8 @@ import Marquee from "react-fast-marquee";
 import useOpenDescription from "@/store/openDescription";
 import BlackBtn from "@/components/buttons/BlackBtn";
 import { RiBookmarkFill, RiBookmarkLine } from "@remixicon/react";
+import Link from "next/link";
+import SimilarProducts from "@/components/products/SimilarProducts";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -55,6 +57,11 @@ const ProductDetail = () => {
           {!product ? null : (
             <div ref={productDetailsContainerRef} className="product_page__content">
               {/* Header */}
+              <div className="category_header">
+                <Link scroll={false} href="/products" className="text-sm">
+                  <p className="text-sm">{product.category || "Accessories"}</p>
+                </Link>
+              </div>
               <div className="product_page__header">
                 <h3 className="product_page__title text-4xl">{product.name}</h3>
                 <span className="product_page__price">
@@ -66,45 +73,45 @@ const ProductDetail = () => {
               <div className="product_page__info">
                 {/* Colors */}
                 <div className="">
-                <div className="product_page__section">
-                  <h3 className="product_page__label text-sm">Color</h3>
-                  <div className="product_page__colors">
-                    {product.colors.map((color, index) => (
-                      <div
-                        key={index}
-                        className={`product_page__color ${activeColor === color ? "product_page__color--active" : ""
-                          }`}
-                        onClick={() => setActiveColor(color)}
-                      >
+                  <div className="product_page__section">
+                    <h3 className="product_page__label text-base">Color</h3>
+                    <div className="product_page__colors">
+                      {product.colors.map((color, index) => (
                         <div
-                          className="product_page__color_inner"
-                          style={{ backgroundColor: color }}
-                        ></div>
-                        <p>{color}</p>
-                      </div>
-                    ))}
+                          key={index}
+                          className={`product_page__color ${activeColor === color ? "product_page__color--active" : ""
+                            }`}
+                          onClick={() => setActiveColor(color)}
+                        >
+                          <div
+                            className="product_page__color_inner"
+                            style={{ backgroundColor: color }}
+                          ></div>
+                          <p>{color}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
 
-                {/* Sizes */}
-                <div className="product_page__section">
-                  <h3 className="product_page__label text-sm">Size</h3>
-                  <div className="product_page__sizes">
-                    {product.sizes.map((size, index) => (
-                      <div
-                        key={index}
-                        className={`product_page__size ${activeSize === size ? "product_page__size--active" : ""
-                          }`}
-                        onClick={() => setActiveSize(size)}
-                      >
-                        <p className="text-base">{size}</p>
-                        {/* {activeSize === size && (
+                  {/* Sizes */}
+                  <div className="product_page__section">
+                    <h3 className="product_page__label text-base">Size</h3>
+                    <div className="product_page__sizes">
+                      {product.sizes.map((size, index) => (
+                        <div
+                          key={index}
+                          className={`product_page__size ${activeSize === size ? "product_page__size--active" : ""
+                            }`}
+                          onClick={() => setActiveSize(size)}
+                        >
+                          <p className="text-base">{size}</p>
+                          {/* {activeSize === size && (
                           <div className="product_page__dot"></div>
                         )} */}
-                      </div>
-                    ))}
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
                 </div>
 
                 {/* Buttons */}
@@ -112,10 +119,10 @@ const ProductDetail = () => {
                   <BlackBtn text={"Add To Cart"} />
                   <div className="productDetail_btn_icon center">
                     <div className="icon_pr">
-                      <RiBookmarkLine size={17}/>
+                      <RiBookmarkLine size={17} />
                     </div>
                     <div className="icon_pr">
-                      <RiBookmarkFill size={17}/>
+                      <RiBookmarkFill size={17} />
                     </div>
                   </div>
                 </div>
@@ -162,6 +169,7 @@ const ProductDetail = () => {
         </div>
       </div>
 
+          <SimilarProducts/>
 
     </>
   );

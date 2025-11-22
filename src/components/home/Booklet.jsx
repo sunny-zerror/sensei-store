@@ -164,7 +164,7 @@ const Booklet = () => {
                                                     {spot.product.name}
                                                 </h3>
                                                 <div className="booklet_product_icon">
-                                                    <RiArrowRightUpLine size={16} />
+                                                    <RiArrowRightUpLine size={14} />
                                                 </div>
                                             </div>
                                             <h3 className="booklet_product_price text-base">

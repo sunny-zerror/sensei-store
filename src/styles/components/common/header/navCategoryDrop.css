@@ -38,6 +38,9 @@
   height: 100%;
 }
 
+.navCategoryDrop__column:first-child{
+  width: 25%;
+}
 .navCategoryDrop__column {
   display: flex;
   flex-direction: column;

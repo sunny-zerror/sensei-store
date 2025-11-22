@@ -127,7 +127,7 @@
 .booklet_hotspot {
   position: absolute;
   display: none;
-  width: 18vw;
+  width: 19vw;
   aspect-ratio: 8/7;
   gap: 0.75rem;
   align-items: center;
@@ -178,14 +178,15 @@
 }
 
 .booklet_product_name {
+  width: 80%;
   text-transform: uppercase;
 }
 
 .booklet_product_icon {
   flex-shrink: 0;
   aspect-ratio: 1/1;
-  width: 2vw;
-  height: 2vw;
+  width: 1.8vw;
+  height: 1.8vw;
   border-radius: 0.25rem;
   display: flex;
   align-items: center;

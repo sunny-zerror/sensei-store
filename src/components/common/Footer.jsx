@@ -30,7 +30,7 @@ const Footer = () => {
       { title: "FAQs", href: "/faqs" },
       { title: "privacy-policy", href: "/privacy-policy" },
       { title: "Contact Support", href: "/contact-support" },
-      { title: "Shipping & Returns", href: "shipping-returns" },
+      { title: "Shipping & Returns", href: "/shipping-returns" },
       { title: "Return & Refund Policy", href: "/return-refund-policy" }
     ]
   };

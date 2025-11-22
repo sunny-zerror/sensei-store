@@ -48,15 +48,7 @@ const ProductCard = ({ product, gridCol }) => {
         onMouseEnter={startImageRotation}
         onMouseLeave={stopImageRotation}
       >
-        {/* Quick Add */}
-        <div className="productCard_quickAdd">
-          <div
-            className={`productCard_quickAddInner ${gridCol === 8 ? "productCard_quickAddInner--small" : ""
-              }`}
-          >
-            <p className={` ${gridCol === 8 ? "text-xs" : "text-base"} `}>Add to Cart</p>
-          </div>
-        </div>
+
 
         {/* Tags & Bookmark */}
         <div
@@ -95,6 +87,17 @@ const ProductCard = ({ product, gridCol }) => {
         </div>
 
         <img className="productCard_image" src={currentImage} alt="Product" />
+
+        {/* Quick Add */}
+        <div className="productCard_quickAdd">
+          <div
+            className={`productCard_quickAddInner ${gridCol === 8 ? "productCard_quickAddInner--small" : ""
+              }`}
+          >
+            <p className={` ${gridCol === 8 ? "text-xs" : "text-base"} `}>Add to Cart</p>
+          </div>
+        </div>
+
       </div>
       {pathname === "/account/wishlist" ? (
         <>

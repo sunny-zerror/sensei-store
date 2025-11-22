@@ -134,6 +134,7 @@
 /* Base select */
 .checkOut_input {
   flex-shrink: 0;
+  background-color: #fff ;
   font-size: 1rem;
   width: 100%;
   padding-left: 0.5rem;
@@ -162,7 +163,6 @@
   border: 1px solid #dedede !important;
   /* border: none !important; */
   font-size: 0.9rem !important;
-  background-color: rgb(245 243 243 / 60%) !important;
   width: 100% !important;
 }
 .react-international-phone-input-container
@@ -174,7 +174,6 @@
   /* border: 1px solid #dedede !important; */
   scale: 0.8;
   border: none !important;
-  background-color: rgba(255, 255, 255, 0.6) !important;
   height: 90%;
 }
 /* 50% opacity placeholder */
@@ -206,7 +205,9 @@
   .checkout_leftContainer {
     padding-left: 2rem;
     padding-right: 2rem;
-    box-shadow: 0px 0px 0.25rem 0.25rem #70707021;
+    /* box-shadow: 0px 0px 0.25rem 0.25rem #70707021; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
   }
 }
 
@@ -314,7 +315,9 @@
 
 @media (min-width: 768px) {
   .checkout_summaryWrapper {
-    box-shadow: 0px 0px 0.25rem 0.25rem #70707021;
+    /* box-shadow: 0px 0px 0.25rem 0.25rem #70707021; */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
     position: sticky;
     top: 13rem;
   }
@@ -325,20 +328,39 @@
   gap: 0.5rem;
 }
 .checkout_couponInput {
+  flex-shrink: 0;
   font-size: 1rem;
-  height: 2.5rem;
-  width: 100%;
-  padding-left: 1rem;
+  width: 70%;
+  padding-left: 0.5rem;
+  height: 2.75rem;
   margin-bottom: 2rem;
+  border-radius: .25rem;
+  padding-right: 3rem;
+  border: 1px solid #00000050;
+  outline: none;
+  color: #000; /* normal text */
+  transition: all 0.1s ease;
+}
+.checkout_couponInput:hover {
+  padding-left: 1rem;
+  border: 2px solid #6a6a6a;
+}
+@media (min-height: 1020px) {
+  .checkout_couponInput {
+    padding-left: 1rem;
+  }
 }
 .checkout_couponBtn {
-  width: 35%;
+  width: 30%;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .checkout_couponBtn:hover {
   opacity: 0.85;
+}
+.subtotal_div{
+  margin-bottom: .5rem;
 }
 .checkout_row {
   display: flex;
@@ -354,10 +376,6 @@
   padding-bottom: 1.25rem;
   margin-bottom: 1.25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.checkout_textSm {
-  opacity: 0.8;
 }
 
 .checkout_paymentImg {

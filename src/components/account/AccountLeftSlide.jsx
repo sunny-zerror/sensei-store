@@ -11,51 +11,31 @@ const AccountLeftSlide = () => {
 
                 <div className="accountLeftSlide_pointsSection text-base">
                     <div>
-                        <h3 className="accountLeftSlide_text15">Welcome, Sunny</h3>
+                        <h3 className="accountLeftSlide_text15 uppercase">Welcome, Sunny</h3>
+
                         <p className="accountLeftSlide_text15">
-                            200 Points to bonus reward
+                            Member ID: 115513509154682
                         </p>
+
                     </div>
 
                     <div>
-                        <div className="accountLeftSlide_progressBar"></div>
-                        <p className="accountLeftSlide_text15">800 Points to Plus Status</p>
-                        <p className="accountLeftSlide_text15">
-                            Points: <span className="accountLeftSlide_highlight">0 / 800</span>
+                        <div className="accountLeftSlide_progressBar">
+                            <div style={{ width: "40%" }} className="accountLeftSlide_progressBar_inner"></div>
+                        </div>
+                        <p className="accountLeftSlide_text15">600 Points to Next Reward Tier</p>
+                        <p className="accountLeftSlide_text15 accountLeftSlide_text15_points uppercase">
+                            Points <span className="accountLeftSlide_highlight">400/1000</span>
                         </p>
+                        <img className='bar_code_img' src="/images/Black-barcode-icon.png" alt="" />
                     </div>
-
-                    <p className="accountLeftSlide_text15">
-                        Member ID: 115513509154682
-                    </p>
                 </div>
 
                 <div className="accountLeftSlide_nav">
-                    <div className="accountLeftSlide_navItem_hidden">
+                    <div>
                         <Link scroll={false} href={"/account"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account" ? "active" : ""
-                                    }`}
-                            >
-                                Account & Rewards
-                            </p>
-                        </Link>
-                    </div>
-                    <div>
-                        <Link scroll={false} href={"/account/wishlist"}>
-                            <p
-                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/wishlist" ? "active" : ""
-                                    }`}
-                            >
-                                Wishlist
-                            </p>
-                        </Link>
-                    </div>
-
-                    <div>
-                        <Link scroll={false} href={"/account/purchases"}>
-                            <p
-                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/purchases" ? "active" : ""
+                                className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account" ? "active" : ""
                                     }`}
                             >
                                 orders
@@ -64,9 +44,32 @@ const AccountLeftSlide = () => {
                     </div>
 
                     <div>
+                        <Link scroll={false} href={"/account/wishlist"}>
+                            <p
+                                className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account/wishlist" ? "active" : ""
+                                    }`}
+                            >
+                                Wishlist
+                            </p>
+                        </Link>
+                    </div>
+
+
+                    <div className="accountLeftSlide_navItem_hidden">
+                        <Link scroll={false} href={"/account/offers"}>
+                            <p
+                                className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account/offers" ? "active" : ""
+                                    }`}
+                            >
+                                Rewards & Offers
+                            </p>
+                        </Link>
+                    </div>
+
+                    <div>
                         <Link scroll={false} href={"/account/settings"}>
                             <p
-                                className={`accountLeftSlide_navLink text-2xl ${router.pathname === "/account/settings" ? "active" : ""
+                                className={`accountLeftSlide_navLink uppercase text-xl ${router.pathname === "/account/settings" ? "active" : ""
                                     }`}
                             >
                                 Account settings
