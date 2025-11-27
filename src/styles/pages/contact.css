@@ -173,7 +173,6 @@
   #contact_form #address .elem {
     width: 100%;
     display: flex;
-    flex-direction: column;
     gap: 1.25rem;
   }
   #contact_form .elem-lf h5 {

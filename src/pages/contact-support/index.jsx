@@ -1,3 +1,4 @@
+import KatanaModal from '@/components/effects/KatanaModal'
 import PhoneModal from '@/components/effects/PhoneModal'
 import ContactForm from '@/components/forms/ContactForm'
 import React from 'react'
@@ -6,7 +7,9 @@ const index = () => {
   return (
     <>
       <section id="contact_form" >
-        <PhoneModal />
+        {/* <PhoneModal /> */}
+        <KatanaModal/>
+
         <div className="animate-item">
           <ContactForm />
         </div>
