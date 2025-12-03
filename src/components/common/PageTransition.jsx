@@ -60,6 +60,7 @@ export default function PageTransition({ children, routeKey }) {
     const el = overlayRef.current;
     gsap.to(el, {
       autoAlpha: 0,
+      delay: 0.2,
       duration: 0.5,
       ease: "ease-secondary",
       onComplete: () => ScrollTrigger.refresh(),

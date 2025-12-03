@@ -1,4 +1,4 @@
-import ProductCard from '../cards/ProductCard';
+import ProductCard from '../common/ProductCard';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import gsap from 'gsap';

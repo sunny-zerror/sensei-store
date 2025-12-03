@@ -1,4 +1,4 @@
-import NavNotification from '@/components/common/NavNotification'
+import NavNotification from '@/components/ui/NavNotification'
 import AboutSection from '@/components/home/AboutSection'
 import Booklet from '@/components/home/Booklet'
 import HeroSwiper from '@/components/home/HeroSwiper'

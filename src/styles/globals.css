@@ -37,3 +37,6 @@ button {
 .uppercase{
   text-transform: uppercase;
 }
+.w-full{
+  width: 100%;
+}

@@ -1,9 +1,8 @@
-import AmountTotalBox from "@/components/checkout/AmountTotalBox";
-import BillingBox from "@/components/checkout/BillingBox";
-import EmailBox from "@/components/checkout/EmailBox";
-import OrderSummaryBox from "@/components/checkout/OrderSummaryBox";
-import ShippingBox from "@/components/checkout/ShippingBox";
+import BillingAddress from "@/components/checkout/BillingAddress";
+import ContactDetail from "@/components/checkout/ContactDetail";
+import ShippingAddress from "@/components/checkout/ShippingAddress";
 import React, { useState } from "react";
+import OrderSummary from "@/components/checkout/OrderSummary";
 
 
 const Checkout = () => {
@@ -35,18 +34,18 @@ const Checkout = () => {
 
                     <div className="checkout_leftContainer">
 
-                        <EmailBox user={user} />
+                        <ContactDetail user={user} />
 
-                        <ShippingBox user={user} />
+                        <ShippingAddress user={user} />
 
-                        <BillingBox user={user} />
+                        <BillingAddress user={user} />
 
 
                     </div>
 
                     <div className="checkout_summaryContainer">
 
-                        <AmountTotalBox user={user} quantity={quantity} setQuantity={setQuantity}  />
+                        <OrderSummary user={user} quantity={quantity} setQuantity={setQuantity}  />
 
                     </div>
 

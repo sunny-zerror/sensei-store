@@ -38,6 +38,10 @@
   width: 65px;
   height: 85px;
   border: 1px solid white;
+  filter: brightness(1);
+}
+.MobileImageSlider_thumbnail--active img {
+  filter: brightness(1);
 }
 
 .MobileImageSlider_thumbnail--inactive {
@@ -59,5 +63,5 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.75);
+  /* filter: brightness(0.75); */
 }

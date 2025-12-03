@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
-import BlackBtn from "../buttons/BlackBtn";
+import Button from "../common/Button";
 
 const Login = ({ setToggle }) => {
   const [visible, setVisible] = useState(false);
@@ -40,7 +40,7 @@ const Login = ({ setToggle }) => {
           </div>
 
           <div className="login-btn">
-            <BlackBtn text={"Login"} />
+            <Button text={"Login"} />
           </div>
         </form>
 

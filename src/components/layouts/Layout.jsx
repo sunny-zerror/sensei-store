@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "../common/Footer";
-import HelpBtn from "../common/HelpBtn";
-import FilterDrop from "../products/FilterDrop";
+import HelpWidget from "../ui/HelpWidget";
 import useOpenFilter from "@/store/openFilter";
 import useOpenDescription from "@/store/openDescription";
-import OpenProductDescription from "../products/OpenProductDescription";
+import OpenProductDescription from "../product/OpenProductDescription";
 import DesktopHeader from "../common/header/DesktopHeader";
 import MobileHeader from "../common/header/MobileHeader";
+import FilterDrawer from "../product/all-products/filter-drawer/FilterDrawer";
 const Layout = ({ children }) => {
 
   const { openFilter, setOpenFilter } = useOpenFilter();
@@ -14,11 +14,11 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      {openFilter && <FilterDrop />}
+      {openFilter && <FilterDrawer />}
       {isOpen && <OpenProductDescription />}
-      <HelpBtn />
-      <DesktopHeader/>
-      <MobileHeader/>
+      <HelpWidget />
+      <DesktopHeader />
+      <MobileHeader />
       {children}
       <Footer />
     </>

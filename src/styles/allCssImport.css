@@ -41,9 +41,7 @@
 @import "./components/common/header/openSearch.css";
 @import "./components/common/header/mobileHeader.css";
 @import "./components/common/header/mobileNav.css";
-
-
-@import "./components/cards/productCard.css";
+@import "./components/common/productCard.css";
 
 
 @import "./components/effects/imagePops.css";

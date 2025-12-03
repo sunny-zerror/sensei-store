@@ -13,6 +13,7 @@
     "@react-three/drei": "9.102.6",
     "@react-three/fiber": "8.15.19",
     "@remixicon/react": "^4.6.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^12.23.5",
     "gsap": "^3.13.0",
     "lenis": "^1.3.13",

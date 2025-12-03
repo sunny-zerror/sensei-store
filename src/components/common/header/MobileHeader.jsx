@@ -3,8 +3,8 @@ import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import MobileCategoryDrop from './MobileCategoryDrop'
 import gsap from 'gsap'
-import CartBag from '../CartBag'
-import OpenSearch from './OpenSearch'
+import SearchPanel from './SearchPanel'
+import CartDrawer from '@/components/cart/CartDrawer'
 
 const MobileHeader = () => {
     const overlayRef = useRef(null);
@@ -42,9 +42,9 @@ const MobileHeader = () => {
                 <div className="mobileHeader_relativeWrapper">
                     <MobileCategoryDrop />
 
-                    <OpenSearch searchActive={searchActive} headerOverlayRef={overlayRef} setSearchActive={setSearchActive} searchInputRef={searchInputRef} />
+                    <SearchPanel searchActive={searchActive} headerOverlayRef={overlayRef} setSearchActive={setSearchActive} searchInputRef={searchInputRef} />
 
-                    <CartBag openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={overlayRef} />
+                    <CartDrawer openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={overlayRef} />
                     <div className="mobileHeader_headerBar">
                         <button onClick={openMenu} className="mobileHeader_menuButton glass">
                             <RiMenu2Fill size={16} />

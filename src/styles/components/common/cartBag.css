@@ -59,6 +59,9 @@
   background-color: transparent;
 }
 
+.empty_cart_box{
+  padding: 1rem 1rem;
+}
 .cartBag_bagItem {
   flex-shrink: 0;
   width: 100%;

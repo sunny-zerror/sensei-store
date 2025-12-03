@@ -1,10 +1,9 @@
-import AccountLeftSlide from '@/components/account/AccountLeftSlide'
-import AddressForm from '@/components/forms/AddressForm'
-import DetailsForm from '@/components/forms/DetailsForm'
-import PasswordForm from '@/components/forms/PasswordForm'
-import SubscriptionForm from '@/components/forms/SubscriptionForm'
-import { RiArrowRightSLine, RiCheckLine } from '@remixicon/react'
-import Link from 'next/link'
+import AccountBreadcrumb from '@/components/account/AccountBreadcrumb'
+import AddressBlock from '@/components/account/settings/AddressBlock'
+import ChangePassword from '@/components/account/settings/ChangePassword'
+import EmailPreference from '@/components/account/settings/EmailPreference'
+import ProfileDetails from '@/components/account/settings/ProfileDetails'
+import AccountLayout from '@/components/layouts/AccountLayout'
 import React, { useState } from 'react'
 
 const user = {
@@ -24,91 +23,25 @@ const user = {
 }
 
 const Settings = () => {
-    const [expandDetailForm, setExpandDetailForm] = useState(false)
-    const [expandAddressForm, setExpandAddressForm] = useState(false)
-    const [expandPasswordForm, setExpandPasswordForm] = useState(false)
-    const [expandSubscribeForm, setExpandSubscribeForm] = useState(false)
 
     return (
-        <div className="settings">
-            <div className="settings__left">
-                <AccountLeftSlide />
-            </div>
-
-            <div className="settings__breadcrumb">
-                <Link scroll={false} href={"/account"}>
-                    <p className="settings__breadcrumb_faded text-sm">Account</p>
-                </Link>
-                <RiArrowRightSLine size={14} />
-                <p className='text-sm'>Settings</p>
-            </div>
-
+        <AccountLayout>
+            <AccountBreadcrumb title={"Setting"} />
             <div className="settings__content">
                 <h3 className="settings__title text-3xl">Settings</h3>
 
                 <div className="settings__sections text-base">
                     {/* User details */}
-                    <div className="checkout_thin_line"></div>
-                    <div className="settings__block ">
-                        <div>
-                            <p>{user.email}</p>
-                            <p>{user.phone}</p>
-                            <p>{user.name}</p>
-                            <p>{user.dob}</p>
-                        </div>
-                        {!expandDetailForm && (
-                            <div onClick={() => setExpandDetailForm(true)} className="settings__link">
-                                <p>Edit My details</p>
-                            </div>
-                        )}
-                        <DetailsForm user={user} expandDetailForm={expandDetailForm} setExpandDetailForm={setExpandDetailForm} />
-                    </div>
+                    <ProfileDetails user={user} />
 
                     {/* Address */}
-                    <div className="checkout_thin_line"></div>
-                    <div className="settings__block ">
-                        <div>
-                            <p>{user.address.line1}</p>
-                            <p>{user.address.line2}</p>
-                            <p>{user.address.country}</p>
-                        </div>
-                        {!expandAddressForm && (
-                            <div onClick={() => setExpandAddressForm(true)} className="settings__link">
-                                <p>Edit Address</p>
-                            </div>
-                        )}
-                        <AddressForm user={user} expandAddressForm={expandAddressForm} setExpandAddressForm={setExpandAddressForm} />
-                    </div>
+                    <AddressBlock user={user} />
 
                     {/* Subscriptions */}
-                    <div className="checkout_thin_line"></div>
-                    <div className="settings__block">
-                        <div>
-                            <p>Newsletter Subscription - {user.subscriptions.newsletter}</p>
-                            <p>Direct Mail Marketing - {user.subscriptions.directMail}</p>
-                        </div>
-                        {!expandSubscribeForm && (
-                            <div onClick={() => setExpandSubscribeForm(true)} className="settings__link">
-                                <p>Edit Subscription</p>
-                            </div>
-                        )}
-                        <SubscriptionForm user={user} expandSubscribeForm={expandSubscribeForm} setExpandSubscribeForm={setExpandSubscribeForm} />
-
-                    </div>
+                    <EmailPreference user={user} />
 
                     {/* Change Password */}
-                    <div className="checkout_thin_line"></div>
-                    <div className="settings__block ">
-                        {expandPasswordForm && (
-                            <p>Change Your Password </p>
-                        )}
-                        {!expandPasswordForm && (
-                            <div onClick={() => setExpandPasswordForm(true)} className="settings__link">
-                                <p>Change Password</p>
-                            </div>
-                        )}
-                        <PasswordForm user={user} expandPasswordForm={expandPasswordForm} setExpandPasswordForm={setExpandPasswordForm} />
-                    </div>
+                    <ChangePassword />
 
                     {/* Sign out */}
                     <div className="checkout_thin_line"></div>
@@ -117,7 +50,7 @@ const Settings = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </AccountLayout>
     )
 }
 

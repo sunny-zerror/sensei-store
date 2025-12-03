@@ -2,10 +2,10 @@ import NavCategory from '@/utils/data/NavCategory'
 import { RiBookmarkLine, RiCloseLine, RiHandbagLine, RiSearchLine, RiUserLine } from '@remixicon/react'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
-import NavCategoryDrop from './NavCategoryDrop'
+import DesktopCategoryDrop from './DesktopCategoryDrop'
 import gsap from 'gsap'
-import OpenSearch from './OpenSearch'
-import CartBag from '../CartBag'
+import SearchPanel from './SearchPanel'
+import CartDrawer from '@/components/cart/CartDrawer'
 
 
 const DesktopHeader = () => {
@@ -55,7 +55,7 @@ const DesktopHeader = () => {
         className="header_overlay scroller_none"
       />
       <div className="desktop_open_cart_paren">
-        <CartBag openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={headerOverlayRef} />
+        <CartDrawer openCartBag={openCartBag} setOpenCartBag={setOpenCartBag} headerOverlayRef={headerOverlayRef} />
 
       </div>
 
@@ -69,7 +69,7 @@ const DesktopHeader = () => {
       <div className="desktop_header_paren">
         <div className={`desktop_header_paren_inner`}>
 
-          <NavCategoryDrop headerOverlayRef={headerOverlayRef} navHover={navHover} setNavHover={setNavHover} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
+          <DesktopCategoryDrop headerOverlayRef={headerOverlayRef} navHover={navHover} setNavHover={setNavHover} activeCategory={activeCategory} setActiveCategory={setActiveCategory} />
 
           <div className="desktop_header_left ">
 
@@ -135,7 +135,7 @@ const DesktopHeader = () => {
                   <RiSearchLine size={16} />
                 </div>
               </div>
-              <OpenSearch searchActive={searchActive} headerOverlayRef={headerOverlayRef} setSearchActive={setSearchActive} searchInputRef={searchInputRef} />
+              <SearchPanel searchActive={searchActive} headerOverlayRef={headerOverlayRef} setSearchActive={setSearchActive} searchInputRef={searchInputRef} />
             </div>
 
 

@@ -1,7 +1,6 @@
-import { RiArrowRightSLine } from '@remixicon/react'
-import Link from 'next/link'
 import React from 'react'
-import AccountLeftSlide from '@/components/account/AccountLeftSlide'
+import AccountLayout from '@/components/layouts/AccountLayout';
+import AccountBreadcrumb from '@/components/account/AccountBreadcrumb';
 
 const offers = [
   {
@@ -23,22 +22,11 @@ const offers = [
 
 const Index = () => {
   return (
-    <div className="purchases_wrapper">
-
-      <div className="purchases_leftSlide">
-        <AccountLeftSlide />
-      </div>
-
-      <div className="purchases_breadcrumb">
-        <Link scroll={false} href="/account">
-          <p className="purchases_breadcrumbLink text-sm">Account</p>
-        </Link>
-        <RiArrowRightSLine size={14} />
-        <p className='text-sm'>Offers</p>
-      </div>
-
+    <AccountLayout>
+      <AccountBreadcrumb title={"Offers"} />
       <div className="purchases_rightSection">
-        <h3 className="purchases_heading text-3xl">Order details</h3>
+        <h3 className="account_heading text-3xl">Account and Rewards</h3>
+
         <div className="account_gridBox">
           {offers.map((offer, index) => (
             <div key={index} className="account_offerCard">
@@ -51,7 +39,7 @@ const Index = () => {
               </div>
 
               <div className="account_offerText">
-                <h3 className="account_offerTitle text-base uppercase">{offer.title}</h3>
+                <p className="account_offerTitle text-base uppercase">{offer.title}</p>
                 <p className="account_offerValidity text-base">{offer.validity}</p>
               </div>
 
@@ -59,7 +47,7 @@ const Index = () => {
           ))}
         </div>
       </div>
-    </div>
+    </AccountLayout>
   )
 }
 

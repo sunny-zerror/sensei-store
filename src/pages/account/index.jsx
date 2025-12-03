@@ -1,6 +1,6 @@
 import React from 'react';
-import AccountLeftSlide from '@/components/account/AccountLeftSlide';
-import Link from 'next/link';
+import OrderList from '@/components/account/orders/OrderList';
+import AccountLayout from '@/components/layouts/AccountLayout';
 
 const orders = [
   {
@@ -83,53 +83,19 @@ const orders = [
 
 const AccountHome = () => {
   return (
-    <div>
-      <div className="account_wrapper">
-        <div>
-          <AccountLeftSlide />
-        </div>
 
-        <div className="account_rightSection">
+    <AccountLayout>
 
-          <h3 className="purchases_heading text-3xl">My purchases</h3>
+      <div className="account_rightSection">
 
-          <div className="purchases_ordersList">
-            {orders.map((order, index) => (
-              <div key={index} className="purchases_orderCard">
-                <p className='text-base'>Order: {order.id}</p>
-                <h3 className="purchases_status text-base">{order.status}</h3>
+        <h3 className="purchases_heading text-3xl">My purchases</h3>
 
-                <div>
-                  <p>{order.date}</p>
-                  <h3 className="purchases_amount text-base">Rs. {order.Totalamount}</h3>
-                </div>
+        <OrderList orders={orders} />
 
-                <div className="purchases_itemsGrid">
-                  {order.items.map((item, i) => (
-                    <div key={i} className="purchases_itemBox">
-                      <img
-                        className="purchases_itemImg"
-                        src={item.image}
-                        alt={`Order item ${i + 1}`}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className="purchases_orderFooter">
-                <p className="purchases_itemCount text-base">{order.items.length} Items</p>
-                <div className="category_header">
-                <Link scroll={false} href={`/account/order/${order.id}`} className="text-sm">
-                  <p className="text-sm">View order</p>
-                </Link>
-              </div>
-                </div>
-
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
-    </div>
+
+    </AccountLayout>
+
   );
 };
 

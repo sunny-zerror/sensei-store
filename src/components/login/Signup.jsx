@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { RiEyeLine, RiEyeOffLine } from "@remixicon/react";
 import { PhoneInput } from "react-international-phone";
 import "react-international-phone/style.css";
-import BlackBtn from "../buttons/BlackBtn";
+import Button from "../common/Button";
 
 const Signup = ({ setToggle }) => {
   const [visible, setVisible] = useState(false);
@@ -84,7 +84,7 @@ const Signup = ({ setToggle }) => {
           </div>
 
           <div className="login-btn">
-          <BlackBtn text={"Sign Up"} />
+          <Button text={"Sign Up"} />
           </div>
         </form>
 
