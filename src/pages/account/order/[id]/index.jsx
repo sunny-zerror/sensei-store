@@ -1,8 +1,6 @@
 import React from 'react';
-import AccountLeftSlide from '@/components/common/AccountLeftSlide';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
-import { RiArrowRightSLine, RiDeleteBinLine } from '@remixicon/react';
 import AccountLayout from '@/components/layouts/AccountLayout';
 import AccountBreadcrumb from '@/components/account/AccountBreadcrumb';
 
